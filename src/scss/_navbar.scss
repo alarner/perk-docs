@@ -1,0 +1,21 @@
+@import 'config';
+.navbar {
+	background-color: $primary;
+	overflow: hidden;
+
+	a {
+		display: block;
+		float: left;
+		line-height: 3.125em;
+		color: lighten($primary, 40%);
+		padding: 0 1em;
+	}
+
+	.logo {
+		color: darken($primary, 20%);
+		font-weight: bold;
+		font-size: 1.5em;
+		padding: 0 1em;
+		line-height: 2.08333em;
+	}
+}

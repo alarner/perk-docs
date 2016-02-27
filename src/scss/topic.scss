@@ -1,0 +1,23 @@
+@import 'config';
+.topics {
+	.list-item{
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&.active {
+			background-color: $highlight;
+			color: #FFFFFF;
+		}
+	}
+
+	@media ($bp-larger-than-phablet) {
+		height: 100%;
+		margin-bottom: 0;
+	}
+}
+
+.topic-contents {
+	padding-right: 8%;
+	max-width: 550px;
+}

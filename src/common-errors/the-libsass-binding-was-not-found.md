@@ -1,7 +1,8 @@
 ---
 title: "Error: The `libsass` binding was not found"
+description: "Error: The `libsass` binding was not found"
 date: 2016-02-21
-layout: error.html
+layout: topic.html
 ---
 
 This error pops up if the version of libsass that you've installed via npm is out of date compared to your installed version of node.

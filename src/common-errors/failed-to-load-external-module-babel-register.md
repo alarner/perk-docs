@@ -1,7 +1,8 @@
 ---
 title: Failed to load external module babel-register
+description: Failed to load external module babel-register
 date: 2016-02-21
-layout: error.html
+layout: topic.html
 ---
 
 This is a generic error that pops up when something bad happens when Perk is booting up. To figure out what's actually going wrong, look below the error. See the example below.

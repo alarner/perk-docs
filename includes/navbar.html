@@ -1,3 +1,8 @@
 <nav class="navbar">
-	Suggest edit
+	<a href="/" class="logo">Perk</a>
+	<% collections.group.forEach(function(group){ %>
+		<% if(group.group && collections[group.group] && collections[group.group].length) { %>
+			<a href="<%= group.path %>"><%= group.title %></a>
+		<% } %>
+	<% }); %>
 </nav>

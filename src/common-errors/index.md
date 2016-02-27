@@ -1,7 +1,8 @@
 ---
-layout: list.html
 title: Common Errors
 description: A list of common errors and how to solve them.
-collection: group
+layout: topic.html
 group: common-errors
 ---
+
+Common errors

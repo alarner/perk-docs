@@ -1,7 +1,8 @@
 ---
 title: Unexpected strict mode reserved word
+description: Unexpected strict mode reserved word
 date: 2016-02-21
-layout: error.html
+layout: topic.html
 ---
 
 Newer versions of node support ES2015 syntax. This error tends to pop up if you are using an outdated version of node.

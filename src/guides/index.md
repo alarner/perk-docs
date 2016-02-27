@@ -1,7 +1,8 @@
 ---
-layout: list.html
 title: Guides
 description: Step by step guides that teach you how to perform common tasks with Perk.
-collection: group
+layout: topic.html
 group: guides
 ---
+
+This is guides

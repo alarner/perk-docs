@@ -1,5 +1,5 @@
-@import 'colors';
 @import 'config';
+@import 'navbar';
 @import '../../node_modules/skeleton-scss/scss/base/normalize';
 @import '../../node_modules/skeleton-scss/scss/base/base-styles';
 @import '../../node_modules/skeleton-scss/scss/modules/grid';
@@ -10,13 +10,7 @@ body {
 	margin: 0;
 }
 nav {
-	&.navbar {
-		height: 3.125em;
-		background-color: $primary;
-	}
-
 	&.topics {
-		height: 3.125em;
 		background-color: $alternate;
 	}
 }
@@ -32,7 +26,6 @@ nav {
 h1 {
 	color: $heading;
 	font-weight: 400;
-	text-align: center;
 }
 
 h2 {
@@ -45,4 +38,27 @@ p {
 
 a {
 	text-decoration: none;
+}
+
+.list-item {
+	display: block;
+	line-height: 2.8em;
+	padding: 0 1em;
+	border-bottom: 1px solid #ccc;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #878787;
+
+	&:hover {
+		background-color: #F9F9F9;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+code {
+	overflow-x: scroll;
 }

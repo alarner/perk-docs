@@ -1,3 +1,9 @@
-<nav class="topics">
-
+<nav class="four columns topics">
+	<%
+		var group = collection[0] === 'group' ? collection[1] : collection[0];
+		var topics = collections[group];
+	%>
+	<% topics.forEach(function(topic) { %>
+		<a href="<%= topic.path %>" class="list-item<%= topic.path === path ? ' active' : '' %>"><%= topic.title %></a>
+	<% }); %>
 </nav>

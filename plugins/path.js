@@ -22,7 +22,6 @@ module.exports = function(opts){
 				file.path = file.filename;
 			}
 		}
-
 		done();
 	};
 };

@@ -33,21 +33,6 @@ u {
 	}
 
 	li {
-		a {
-			display: block;
-			line-height: 2.625em;
-			padding: 0 1em;
-			border-bottom: 1px solid #ccc;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			color: #878787;
-
-			&:hover {
-				background-color: #F9F9F9;
-			}
-		}
-
 		&:last-child {
 			a {
 				border-bottom: none;

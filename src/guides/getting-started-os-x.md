@@ -9,7 +9,7 @@ Perk is glue that holds together a collection of powerful and full featured Java
 
 * [Passport](http://passportjs.org/)
 * [Express](http://expressjs.com/)
-* [React](https://facebook.github.io/react/)
+* [Redis](http://redis.io/)
 * [Knex](http://knexjs.org/)
 
 

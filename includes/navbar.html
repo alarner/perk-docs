@@ -1,8 +1,15 @@
 <nav class="navbar">
 	<a href="/" class="logo">Perk</a>
+	<%
+		var g = null;
+		var pieces = path.split('/');
+		if(pieces.length >=2) {
+			g = pieces[1].toLowerCase();
+		}
+	%>
 	<% collections.group.forEach(function(group){ %>
 		<% if(group.group && collections[group.group] && collections[group.group].length) { %>
-			<a href="<%= group.path %>"><%= group.title %></a>
+			<a href="<%= group.path %>"<%- g === group.group ? ' class="active"' : '' %>><%= group.title %></a>
 		<% } %>
 	<% }); %>
 </nav>

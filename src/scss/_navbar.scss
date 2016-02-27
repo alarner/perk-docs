@@ -9,6 +9,10 @@
 		line-height: 3.125em;
 		color: lighten($primary, 40%);
 		padding: 0 1em;
+
+		&:hover {
+			color: #fff;
+		}
 	}
 
 	.logo {
@@ -17,5 +21,13 @@
 		font-size: 1.5em;
 		padding: 0 1em;
 		line-height: 2.08333em;
+
+		&:hover {
+			color: darken($primary, 30%);
+		}
+	}
+
+	.active {
+		background-color: darken($primary, 10%);
 	}
 }

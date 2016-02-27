@@ -16,19 +16,28 @@
 			</div>
 		</section>
 		<section class="row">
-			<% collections.group.forEach(function(group){ %>
-				<% if(group.group && collections[group.group] && collections[group.group].length) { %>
-					<div class="four columns group">
-						<a href="<%= group.path %>" class="title"><%= group.title %></a>
-						<ul>
-							<% collections[group.group].slice(0, 4).forEach(function(content) { %>
-								<li><a href="<%= content.path %>" class="list-item"><%= content.title %></a></li>
-							<% }); %>
-							<li><a href="<%= group.path %>" class="list-item">Full List...</a></li>
-						</ul>
-					</div>
-				<% } %>
-			<% }); %>
+			<%
+				collections
+				.group
+				.forEach(function(group){ %>
+					<% if(group.group && collections[group.group] && collections[group.group].length) { %>
+						<div class="four columns group">
+							<a href="<%= group.path %>" class="title"><%= group.title %></a>
+							<ul>
+								<% 
+									collections[group.group]
+									.filter(function(content) {
+										return (content.path.substr(-11) !== '/index.html');
+									})
+									.slice(0, 4)
+									.forEach(function(content) { %>
+									<li><a href="<%= content.path %>" class="list-item"><%= content.title %></a></li>
+								<% }); %>
+								<li><a href="<%= group.path %>" class="list-item">Full List...</a></li>
+							</ul>
+						</div>
+					<% } %>
+				<% }); %>
 		</main>
 	</div>
 </body>

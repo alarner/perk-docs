@@ -1,6 +1,23 @@
 @import 'config';
 .topics {
 	.list-item{
+		padding-left: 2em;
+
+		&::before {
+			content: '\0203A';
+			position: relative;
+			left: -10px;
+		}
+
+		&:first-child {
+			padding-left: 1em;
+
+			&::before {
+				content: '';
+			}
+
+		}
+
 		&:last-child {
 			border-bottom: none;
 		}

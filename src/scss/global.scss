@@ -1,4 +1,11 @@
 @import 'colors';
+@import 'config';
+@import '../../node_modules/skeleton-scss/scss/base/normalize';
+@import '../../node_modules/skeleton-scss/scss/base/base-styles';
+@import '../../node_modules/skeleton-scss/scss/modules/grid';
+@import '../../node_modules/skeleton-scss/scss/modules/forms';
+@import '../../node_modules/skeleton-scss/scss/modules/code';
+
 body {
 	margin: 0;
 }
@@ -13,6 +20,29 @@ nav {
 		background-color: $alternate;
 	}
 }
+
+.container {
+	width: 90%;
+}
+
+.columns {
+	margin-bottom: $column-margin;
+}
+
+h1 {
+	color: $heading;
+	font-weight: 400;
+	text-align: center;
+}
+
+h2 {
+	color: $paragraph;
+}
+
+p {
+	color: $paragraph;
+}
+
 a {
-	color: red;
+	text-decoration: none;
 }

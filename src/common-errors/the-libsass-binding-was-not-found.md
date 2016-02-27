@@ -1,5 +1,5 @@
 ---
-title: Error: The `libsass` binding was not found
+title: "Error: The `libsass` binding was not found"
 date: 2016-02-21
 layout: error.html
 ---

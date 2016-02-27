@@ -1,0 +1,5 @@
+@import '../../node_modules/skeleton-scss/scss/base/variables';
+@import '../../node_modules/skeleton-scss/scss/base/functions';
+
+$bp-larger-than-phablet   : "min-width: 750px" !global;
+$font-family: 'Open Sans', sans-serif;

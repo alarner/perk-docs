@@ -1,13 +1,17 @@
 <html>
 <head>
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+	<link rel="stylesheet" type="text/css" href="/assets/css/global.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/home.css">
 </head>
 <body>
-  <h1>{{ title }}</h1>
-  <p>{{ description }}</p>
-  <a href="/docs">Documentation</a>
-  <a href="/guides">Guides</a>
-  <a href="/common-errors">Common errors</a>
+	{{> navbar }}
+	{{> topics }}
+	<main>
+		<h1>{{ title }}</h1>
+		<time>{{ date }}</time>
+		{{{ contents }}}
+	</main>
 </body>
 </html>

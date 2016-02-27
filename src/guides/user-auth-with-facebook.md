@@ -4,17 +4,18 @@ date: 2016-02-09
 layout: tutorial.html
 ---
 
-Building your own Facebook login with Perk is super easy. It's a three step process:
+Building your own Facebook login with Perk is super easy. It's a four step process:
 
 1. Get the necessary API keys from Facebook (or whichever other supported third pary service you want).
 1. Update your `config/auth.js` file or `config/local.js` file.
 1. Create a login button.
+1. Deploy to Production
 
 ### 1. Get API Keys
 
 1. Log in to [Facebook](https://facebook.com).
 2. Go to the [Facebook for Developers](https://developers.facebook.com/).
-3. Click "Add a New App."
+3. Click _Add a New App._
 	
 	![Add a New App](/assets/images/guides/user-auth-with-facebook/add-a-new-app.jpg)
 
@@ -26,11 +27,11 @@ Building your own Facebook login with Perk is super easy. It's a three step proc
 
 	![Create App ID](/assets/images/guides/user-auth-with-facebook/create-app-id.jpg)
 
-6. Click on the "Settings" link on the left and then fill in your app domain (probably localhost for your dev environment) and site url. Click "Save Changes".
+6. Click on the _Settings_ link on the left and then fill in your app domain (probably localhost for your dev environment) and site url. Click _Save Changes_.
 	
 	![Save](/assets/images/guides/user-auth-with-facebook/save.jpg)
 
-7. Stay on this page, we are going to use the "App Id" and "App Secret."
+7. Stay on this page, we are going to use the _App Id_ and _App Secret._
 
 ### 2. Update your `config/auth.js`
 
@@ -60,4 +61,23 @@ The last step is to create the actual login button. You can do this in any of yo
 <a href="/auth/facebook/login">Log in with Facebook</a>
 ```
 
-Click on that button! That's all folks.
+Click on that button! You should be redirected to Facebook and asked to authorize the app.
+
+### 4. Deploy to Production
+
+Before you launch you app, you'll need to set up a few more configuration settings on the Facebook side. Go to [developers.facebook.com](https://developers.facebook.com) and select your app.
+
+1. Click on _Settings_ on the left
+1. Select the _Advanced_ tab at the top
+1. Specify an _Update Notification Email_
+1. Specify _Valid OAuth redirect URIs_
+	* This will be something like _yourdomain.com_/auth/facebook/callback
+1. Click _Save Changes_ at the bottom of the page.
+
+![Deploy 1](/assets/images/guides/user-auth-with-facebook/deploy1.jpg)
+
+Finally click on the _App Review_ tab and toggle on the button next to the text _Do you want to make this app and all its live features available to the general public?_
+
+![Deploy 2](/assets/images/guides/user-auth-with-facebook/deploy1.jpg)
+
+

@@ -1,0 +1,18 @@
+@import 'colors';
+body {
+	margin: 0;
+}
+nav {
+	&.navbar {
+		height: 3.125em;
+		background-color: $primary;
+	}
+
+	&.topics {
+		height: 3.125em;
+		background-color: $alternate;
+	}
+}
+a {
+	color: red;
+}

@@ -1,11 +1,17 @@
 <html>
 <head>
-  <title>My Blog</title>
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+	<link rel="stylesheet" type="text/css" href="/assets/css/global.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/tutorial.css">
 </head>
 <body>
-	{{> navigation }}
-  <h1>{{ title }}</h1>
-  <time>{{ date }}</time>
-  {{{ contents }}}
+	{{> navbar }}
+	{{> topics }}
+	<main>
+		<h1>{{ title }}</h1>
+		<time>{{ date }}</time>
+		{{{ contents }}}
+	</main>
 </body>
 </html>

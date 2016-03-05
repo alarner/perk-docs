@@ -29,15 +29,29 @@ Next, open up the command line and run `heroku login` to connect with your newly
 
 Now you're all ready to deploy your app. Follow the steps below to go live!
 
-1. On the command line make sure you are in the root directory of the app you want to deploy.
-1. Run `git init` if you haven't already set up a git repository for your project. If you have you can skip this step.
-1. Run `heroku create` to spin up a new Heroku server.
-1. Run `heroku addons:create redistogo:nano` to spin up a Redis server to store your user sessions.
-1. Run `heroku addons:create heroku-postgresql:hobby-dev` to spin up a PostgreSQL database to store your data.
-1. Run `heroku config:set NODE_ENV=heroku` to tell your Perk app to use Heroku specific configuration located in *config/env/heroku.js*.
-1. Run `heroku config:set SESSION_SECRET=your_secret_goes_here` to specify a secret session code for encrypting your user sessions.
-1. Run `git push heroku master` to push your code to Heroku and deploy your app.
+On the command line make sure you are in the root directory of the app you want to deploy. Run the following commands from inside the root directory of your Perk project:
+
+1. If you haven't already set up a git repository for your project...
+	* `git init`
+	* `git add .`
+	* `git commit -m "Initial commit"`
+1. `heroku create`
+	* This will spin up a new Heroku server.
+1. `heroku addons:create redistogo:nano`
+	* This will spin up a Redis server to store your user sessions.
+1. `heroku addons:create heroku-postgresql:hobby-dev`
+	* This will spin up a PostgreSQL database to store your data.
+1. `heroku config:set NODE_ENV=heroku`
+	* Tells your Perk app to use Heroku specific configuration located in *config/env/heroku.js*.
+1. `heroku config:set SESSION_SECRET=your_secret_goes_here`
+	* Specifies a secret session code for encrypting your user sessions.
+1. `heroku config:set HEROKU_POSTINSTALL=true`
+	* Tells our postinstall script to run migrations for Heroku.
+1. `git push heroku master`
+	* Pushes your code to Heroku and deploy your app.
 	* This will also run any database migrations that you've added.
+1. `heroku open`
+	* Opens the deployed app in your browser.
 
 ### Re-deploying
 

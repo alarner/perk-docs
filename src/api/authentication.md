@@ -16,7 +16,10 @@ Four authentication providers are currently supported out of the box.
 
 More are coming soon. You can request support for a specific provider [here](https://github.com/alarner/perk/issues/1).
 
-Setting up authentication is a breeze. It all happens inside of your `/config/auth.js` file. Simply fill out the necessary information for the provider that you want to support. Then redirect your users to `/auth/:provider/login` to authenticate them.
+Setting up authentication is a breeze. It all happens inside of your `/config/auth.js` file. Simply fill out the necessary information for the provider that you want to support. Then redirect your users to:
+
+* **/auth/:provider/login** to authenticate via an OAuth provider
+* **/auth/login** or **/auth/register** to authenticate via username and password
 
 You can also read the full guide on setting up [Facebook OAuth](/guides/user-auth-with-facebook.html).
 

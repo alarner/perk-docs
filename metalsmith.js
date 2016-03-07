@@ -11,17 +11,20 @@ module.exports = Metalsmith(__dirname)
 .use(filenames())
 .use(collections({
 	guides: {
-		pattern: 'guides/*.md'
+		pattern: 'guides/*.md',
+		sortBy: 'order'
 	},
 	api: {
-		pattern: 'api/*.md'
+		pattern: 'api/*.md',
+		sortBy: 'title'
 	},
 	'common-errors': {
-		pattern: 'common-errors/*.md'
+		pattern: 'common-errors/*.md',
+		sortBy: 'order'
 	},
 	group: {
 		pattern: '*/index.md',
-		sortBy: 'title'
+		sortBy: 'order'
 	}
 }))
 .use(assets({

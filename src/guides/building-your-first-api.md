@@ -3,6 +3,7 @@ title: Building your first API
 description: Follow these steps to build your first API using Perk.
 date: 2016-02-15
 layout: topic.html
+order: 2
 ---
 
 One of the most common uses for node is building RESTful APIs. Perk uses express routing with bookshelf models to accomplish this task. It's a short three step process.

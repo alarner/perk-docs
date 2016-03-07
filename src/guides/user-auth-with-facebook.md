@@ -3,6 +3,7 @@ title: User authentication with Facebook
 description: Learn how to integrate Facebook login into your Perk app.
 date: 2016-02-09
 layout: topic.html
+order: 3
 ---
 
 Building your own Facebook login with Perk is super easy. It's a four step process:

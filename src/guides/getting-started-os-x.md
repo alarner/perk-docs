@@ -3,6 +3,7 @@ title: Getting started with Perk on OS X
 description: Get Perk up and running on your OS X machine.
 date: 2016-02-09
 layout: topic.html
+order: 1
 ---
 
 Perk is glue that holds together a collection of powerful and full featured JavaScript libraries that are written by some awesome developers. Those libraries include:

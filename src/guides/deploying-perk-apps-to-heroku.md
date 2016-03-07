@@ -3,7 +3,7 @@ title: Deploying Perk Apps to Heroku
 description: Instructions for deploying perk apps to Heroku.
 date: 2016-03-04
 layout: topic.html
-order: 4
+order: 400
 ---
 
 [Heroku](https://www.heroku.com) is a cloud platform that lets you build, deliver, monitor and scale apps. Perk integrates easily with Heroku so that you can deploy your apps quickly without worrying about managing your own servers (although you can do that too if you want to).

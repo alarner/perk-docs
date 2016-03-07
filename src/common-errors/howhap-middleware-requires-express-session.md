@@ -3,6 +3,7 @@ title: howhap-middleware requires an express session.
 description: howhap-middleware requires an express session.
 date: 2016-02-20
 layout: topic.html
+order: 100
 ---
 
 [howhap-middleware](https://github.com/alarner/howhap-middleware) is a library that makes it easier to display errors from the server to the client. This library relies on teh fact that there is an express session available on your request objects. This error commonly pops up if your session configuration is incorrect or your redis server is not running.

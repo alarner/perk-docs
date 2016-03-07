@@ -5,6 +5,8 @@ var assets = require('metalsmith-assets');
 var sass = require('metalsmith-sass');
 var collections = require('metalsmith-collections');
 var filenames = require('metalsmith-filenames');
+// var metallic = require('metalsmith-metallic');
+var prism = require('metalsmith-prism');
 var path = require('./plugins/path');
 
 module.exports = Metalsmith(__dirname)
@@ -31,7 +33,11 @@ module.exports = Metalsmith(__dirname)
 	source: './assets',
 	destination: './assets' 
 }))
-.use(markdown())
+.use(markdown({
+	tables: true,
+	langPrefix: 'language-'
+}))
+.use(prism())
 .use(path())
 .use(layouts({
 	engine: 'ejs',

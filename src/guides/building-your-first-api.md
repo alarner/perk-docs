@@ -10,7 +10,7 @@ One of the most common uses for node is building RESTful APIs. Perk uses express
 
 ### Create a new database table
 
-The first step is to create a new database table. YOu can do this easily with a [knex migration](http://knexjs.org/#Migrations). If you haven't installed the knex command line tools yet, you shoud start by running:
+The first step is to create a new database table. You can do this easily with a [knex migration](http://knexjs.org/#Migrations). If you haven't installed the knex command line tools yet, you shoud start by running:
 
 `npm install -g knex`
 
@@ -66,7 +66,7 @@ Finally, you'll want to create and hook up a new route for your API endpoint.
 
 We've put together a library called *bookshelf-api* that will create express midleware to automatically generate the API endpoint from your models directory. First install it:
 
-`npm instal --save bookshelf-api`
+`npm install --save bookshelf-api`
 
 Next, create a new `api.js` file in your `/routes` directory. In that file add the following code:
 
@@ -83,7 +83,7 @@ router.use('/product', api);
 module.exports = router;
 ```
 
-This code uses the *bookshelf-api* middleware the handle any requests that start with `/product`.
+This code uses the *bookshelf-api* middleware to handle any requests that start with `/product`.
 
 Finally, let's hook up this route to our application. In your `/app.js` file add the following line of code near the top where you include your routes:
 

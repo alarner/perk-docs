@@ -3,7 +3,7 @@ title: Getting started with Perk on OS X
 description: Get Perk up and running on your OS X machine.
 date: 2016-02-09
 layout: topic.html
-order: 100
+order: 002
 ---
 
 Perk is glue that holds together a collection of powerful and full featured JavaScript libraries that are written by some awesome developers. Those libraries include:
@@ -14,48 +14,44 @@ Perk is glue that holds together a collection of powerful and full featured Java
 * [Knex](http://knexjs.org/)
 
 
-If you're already familiar with one or more of these libraries a lot of this should look familiar. If not, this guide will help you get started on OS X.
+If you've already used one or more of these libraries a lot of this should look familiar. If not, this guide will help you get started on OS X.
 
-### Installing Homebrew
+For the purposes of this guide we'll assume that you already have the following software installed:
 
-> If you already have homebrew installed you can skip this step.
-
-Before we can start writing code we need to install a few other things that Perk depends on. Those things are **node** and **redis**. The easiest way to do this on OS X is by using **homebrew**. Sorry for all the names! I wish I could say is gets better, but it doesn't.
-
-There are instructions for how to [install Homebrew here](http://brew.sh/). Basically you just need to open up your terminal and copy and paste the command under the big **Install Homebrew** heading. Once you're done installing homebrew, meet us back here. We'll be waiting.
-
-> Normally you don't want to paste random commands from the internet into your terminal because bad people can do bad things, but homebrew is very trusted in the development community and you can see exactly what the script does [here](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md#installation).
-
-### Installing node, redis, etc.
-
-> If you already have these installed, you can skip this step.
-
-Great! Now we can install node and redis very easily. If you're planning on building a database driven app you will want to install a database as well. We recommend Postgres. To install these three just type the following command into your terminal:
-
-`brew install node redis postgres`
-
-> postgres is optional and you can leave it out.
-
-If you don't want to have to manually start the redis and postgres servers each time your computer restarts you should be sure to run the commands that start with `launchctl load ...`. They will be displayed in your terminal after brew is finished installing and will probably look like this:
-
-```
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
-```
+1. Node (version 5.0+)
+	> How can I tell if node is installed? Type `node -v` into your terminal. It should respond with the version of node that you have installed. If it's not installed you can follow our guide to [install node on your mac](/guides/install-node-redis-and-postgres-on-your-mac.html).
+1. redis
+	> How can I tell if redis is installed? Type `redis-cli -v` into your terminal. It should respond with the version of redis that you have installed. If it's not installed you can follow our guide to [install redis on your mac](/guides/install-node-redis-and-postgres-on-your-mac.html).
+1. PostgreSQL
+	> How can I tell if postgres is installed? Type `psql -V` into your terminal. It should respond with the version of postgres that you have installed. If it's not installed you can follow our guide to [install postgres on your mac](/guides/install-node-redis-and-postgres-on-your-mac.html).
 
 ### Installing Perk
 
+In your terminal type the following commands:
+
 1. `npm install -g knex perk-cli`
-1. `mkdir myProject`
+	
+	> Installs knex and the Perk command line interface
+
 1. `perk myProject`
+
+	> creates a new Perk project called "myProject"
+
+1. `cd myProject && npm install`
+
+	> installs all of the dependencies for your new project
 
 ### Starting Your App
 
-1. `npm run dev`
+In your terminal type `npm run dev`. This will start the perk server and 
 
 Perk has a robust configuration system that allows you to specify default config information, environment specific overrides as well as local machine specific overrides. This is useful for configuring database connection information, OAuth API keys, session information and more. The first time you start a Perk app it will ask you to specify some information about your app.
 
-The bare minimum information that you will need to fill out when your app first starts is the database connection info as well as a secret key to encrypt your sessions. You can learn about all the different configuration options in the [configuration](/docs/configuration.html) documentation.
+The bare minimum information that you will need to fill out when your app first starts is the database connection info as well as a secret key to encrypt your sessions.
+
+> If you are not building a database driven app then you can leave the database connection information blank.
+
+You can learn about all the different configuration options in the [configuration](/docs/configuration.html) documentation.
 
 You can use the arrow keys / enter key to navigate the configuration interface. Once you are done type `crtl + s` to save and continue.
 
@@ -67,6 +63,7 @@ After saving your app should be up and running! Go to [http://localhost:3000](ht
 
 There are a bunch of other great [guides](/guides) on topics like:
 
+<!--* [Creating a static home page](/guides/creating-a-static-home-page.html)-->
 * [Building your first API](/guides/building-your-first-api.html)
 * [User authentication with Facebook](/guides/user-auth-with-facebook.html)
 * [Database migrations with Knex](/guides/database-migrations-with-knex.html)

@@ -47,7 +47,7 @@ In your terminal type `npm run dev`. This will start the perk server and restart
 
 Perk has a robust configuration system that allows you to specify default config information, environment specific overrides as well as local machine specific overrides. This is useful for configuring database connection information, OAuth API keys, session information and more. The first time you start a Perk app it will ask you to specify some information about your app.
 
-The bare minimum information that you will need to fill out when your app first starts is the database connection info as well as a secret key to encrypt your sessions.
+The bare minimum information that you will need to fill out when your app first starts is the database connection info as well as a secret key to encrypt your sessions. If you're not creating a database driven application you can skip the database information.
 
 * **database.client**: The database adapter that we want to use. In our case we're using PostgreSQL so that value should be `pg`. You can find a list of possible database adapters [here](http://knexjs.org/#Installation-node).
 * **database.connection.host**: The url or IP if the server where your database is hosted. We will use a local database so enter `localhost`.
@@ -70,7 +70,7 @@ After saving your app should be up and running! Go to [http://localhost:3000](ht
 
 There are a bunch of other great [guides](/guides) on topics like:
 
-<!--* [Creating a static home page](/guides/creating-a-static-home-page.html)-->
+* [Creating a static home page](/guides/creating-a-static-home-page.html)
 * [Building your first API](/guides/building-your-first-api.html)
 * [User authentication with Facebook](/guides/user-auth-with-facebook.html)
 * [Database migrations with Knex](/guides/database-migrations-with-knex.html)

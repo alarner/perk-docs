@@ -1,5 +1,6 @@
 @import 'prism';
 @import 'config';
+
 .topics {
 	.list-item{
 		padding-left: 2em;
@@ -38,4 +39,14 @@
 .topic-contents {
 	padding-right: 8%;
 	max-width: 550px;
+}
+
+pre {
+	background-color: #F7F7F7;
+	padding: 1.5em;
+}
+
+code[class*="language-"] {
+	text-shadow: none;
+	white-space: pre-wrap;
 }

@@ -3,7 +3,7 @@ title: Installing Homebrew on your Mac
 description: Before we can start writing code we need to install a few other things that Perk depends on.
 date: 2016-03-18
 layout: topic.html
-order: 100
+order: 010
 ---
 
 > If you already have homebrew installed you can skip this step.

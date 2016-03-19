@@ -4,7 +4,6 @@
 @import '../../node_modules/skeleton-scss/scss/base/base-styles';
 @import '../../node_modules/skeleton-scss/scss/modules/grid';
 @import '../../node_modules/skeleton-scss/scss/modules/forms';
-@import '../../node_modules/skeleton-scss/scss/modules/code';
 
 body {
 	margin: 0;
@@ -57,8 +56,4 @@ a {
 
 img {
 	max-width: 100%;
-}
-
-code {
-	overflow-x: scroll;
 }

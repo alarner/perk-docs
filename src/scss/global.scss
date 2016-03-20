@@ -27,7 +27,7 @@ h1 {
 	font-weight: 400;
 }
 
-h2 {
+h2, h3, h4, h5, h6 {
 	color: $paragraph;
 }
 
@@ -91,6 +91,18 @@ body {
 	pre {
 		background-color: #F7F7F7;
 		padding: 1.5em;
+
+		code {
+			background-color: transparent;
+
+			&::before {
+				content: '';
+			}
+
+			&::after {
+				content: '';
+			}
+		}
 	}
 
 	code {
@@ -100,14 +112,6 @@ body {
 		&[class*="language-"] {
 			text-shadow: none;
 			white-space: pre-wrap;
-
-			&::before {
-				content: '';
-			}
-
-			&::after {
-				content: '';
-			}
 		}
 
 		&::before {

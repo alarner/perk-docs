@@ -4,6 +4,7 @@
 @import '../../node_modules/skeleton-scss/scss/base/base-styles';
 @import '../../node_modules/skeleton-scss/scss/modules/grid';
 @import '../../node_modules/skeleton-scss/scss/modules/forms';
+@import '../../node_modules/skeleton-scss/scss/modules/tables';
 
 body {
 	margin: 0;
@@ -91,6 +92,7 @@ body {
 	pre {
 		background-color: #F7F7F7;
 		padding: 1.5em;
+		white-space: pre-wrap;
 
 		code {
 			background-color: transparent;

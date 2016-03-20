@@ -1,6 +1,6 @@
 ---
 title: Installing Homebrew on your Mac
-description: Before we can start writing code we need to install a few other things that Perk depends on.
+description: Instructions for installing Homebrew for OS X users.
 date: 2016-03-18
 layout: topic.html
 order: 010

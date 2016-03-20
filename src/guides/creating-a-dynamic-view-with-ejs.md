@@ -6,7 +6,7 @@ layout: topic.html
 order: 120
 ---
 
-coming soon
+Coming soon!
 
 <!--
 *ejs* templating supports the following tags:

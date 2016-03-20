@@ -1,7 +1,47 @@
 @import 'prism';
 @import 'config';
 
+body {
+	background-image: -webkit-gradient(linear,
+		left top,
+		right top,
+		color-stop(0, $alternate),
+		color-stop(30.66667%, $alternate),
+		color-stop(30.66667%, #fff),
+		color-stop(100%, #fff)
+	);
+	background-image: -webkit-linear-gradient(
+		left,
+		$alternate,
+		$alternate 30.66667%,
+		#fff 30.66667%,
+		#fff 100%
+	);
+	background-image: -moz-linear-gradient(
+		left,
+		$alternate,
+		$alternate 30.66667%,
+		#fff 30.66667%,
+		#fff 100%
+	);
+	background-image: -ms-linear-gradient(
+		left,
+		$alternate,
+		$alternate 30.66667%,
+		#fff 30.66667%,
+		#fff 100%
+	);
+	background-image: -o-linear-gradient(
+		left,
+		$alternate,
+		$alternate 30.66667%,
+		#fff 30.66667%,
+		#fff 100%
+	);
+}
+
 .topics {
+	background-color
 	.list-item{
 		padding-left: 2em;
 

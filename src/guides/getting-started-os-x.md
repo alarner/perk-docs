@@ -6,15 +6,7 @@ layout: topic.html
 order: 002
 ---
 
-Perk is glue that holds together a collection of powerful and full featured JavaScript libraries that are written by some awesome developers. Those libraries include:
-
-* [Passport](http://passportjs.org/)
-* [Express](http://expressjs.com/)
-* [Redis](http://redis.io/)
-* [Knex](http://knexjs.org/)
-
-
-If you've already used one or more of these libraries a lot of this should look familiar. If not, this guide will help you get started on OS X.
+Perk is glue that holds together a collection of [powerful](http://passportjs.org/) and [full](http://knexjs.org/) [featured](http://expressjs.com/) [libraries](http://redis.io/) that are written by some awesome developers. This guide will help you get started on OS X.
 
 For the purposes of this guide we'll assume that you already have the following software installed:
 

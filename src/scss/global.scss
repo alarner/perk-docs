@@ -57,3 +57,32 @@ a {
 img {
 	max-width: 100%;
 }
+
+blockquote {
+	padding: 0 15px;
+	color: #777;
+	border-left: 4px solid #ddd;
+	margin: 0;
+	margin-bottom: 16px;
+
+	&>:first-child {
+		margin-top: 0;
+	}
+
+	&>:last-child {
+		margin-bottom: 0;
+	}
+}
+
+ul, ol {
+	padding-left: 2em;
+	margin-top: 0;
+    margin-bottom: 16px;
+
+    > li {
+		display: list-item;
+		text-align: -webkit-match-parent;
+		color: $paragraph;
+		line-height: 1.6;
+	}
+}

@@ -1,6 +1,6 @@
 ---
 title: Installing Node, Redis and PostgreSQL on your Mac
-description: Before we can start writing code we need to install a few other things that Perk depends on.
+description: A quick guide describing how to install Node, Redis and PostgreSQL on OS X.
 date: 2016-03-18
 layout: topic.html
 order: 020

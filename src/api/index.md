@@ -1,7 +1,7 @@
 ---
 title: API Documentation
 description: API Documentation for Perk.
-layout: topic.html
+layout: topic-list.html
 group: api
 order: 002
 ---

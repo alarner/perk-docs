@@ -77,12 +77,47 @@ blockquote {
 ul, ol {
 	padding-left: 2em;
 	margin-top: 0;
-    margin-bottom: 16px;
+	margin-bottom: 16px;
 
-    > li {
+	> li {
 		display: list-item;
 		text-align: -webkit-match-parent;
 		color: $paragraph;
 		line-height: 1.6;
+	}
+}
+
+body {
+	pre {
+		background-color: #F7F7F7;
+		padding: 1.5em;
+	}
+
+	code {
+		background-color: rgba(0,0,0,0.04);
+		padding: 0.2em 0;
+
+		&[class*="language-"] {
+			text-shadow: none;
+			white-space: pre-wrap;
+
+			&::before {
+				content: '';
+			}
+
+			&::after {
+				content: '';
+			}
+		}
+
+		&::before {
+			letter-spacing: -0.2em;
+			content: "\00a0";
+		}
+
+		&::after {
+			letter-spacing: -0.2em;
+			content: "\00a0";
+		}
 	}
 }

@@ -10,7 +10,7 @@ layout: topic.html
 1. [Overview](#overview)
 1. [Local machine overrides](#local-machine-overrides)
 1. [Environment overrides](#environment-overrides)
-1. [Interactive CLI configuration](#environment-overrides)
+1. [Interactive CLI configuration](#cli-configuration)
 1. [Full list of configuration options](#configuration-options)
 	* [Authentication](#authentication)
 	* [Database](#database)
@@ -76,6 +76,8 @@ NODE_ENV=production npm start
 ```
 
 > You may replace production with any environment name you wish, provided that you have a file in the `/config/env` directory that matches that name. For example, you should already have a file in that directory specifically configured for heroku.
+
+## CLI configuration
 
 ## Configuration options
 
@@ -186,12 +188,93 @@ file:               /config/database.js
 override property:  database
 ```
 
+#### client
+
+> type: string
+
+> default: 'pg'
+
+The client parameter is required and determines which client adapter will be used with the library. Options are `pg`, `sqlite3`, `mysql`, `mysql2`, `mariasql`, `strong-oracle`, `oracle`. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
+#### connection.host
+
+> type: string
+
+> default: 'localhost'
+
+The host (url, IP, etc.) where the database is being run. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
+#### connection.user
+
+> type: string
+
+> default: 'postgres'
+
+The database user to connect with. Running `createuser new_user_name` on the command line will create a new postgres usre for you. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
+#### connection.password
+
+> type: string
+
+> default: ''
+
+The database user's password to use when connecting to the database. Running `createuser -W new_password new_user_name` on the command line will create a new postgres user for you with the specified password. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
+#### connection.database
+
+> type: string
+
+> default: 'test'
+
+The name of the database to connect to. Running `createdb test` on the command line will create a new postgres database for you. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
+#### migrations.tableName
+
+> type: string
+
+> default: 'migrations'
+
+The name of the database table used to store migration history. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
+#### seeds.directory
+
+> type: string
+
+> default: './seeds/dev'
+
+The name of the directory where seed scripts are stored. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
 ### Logging
 
 ```
 file:               /config/logging.js
 override property:  logging
 ```
+
+#### name
+
+> type: string
+
+> default: 'a new perk app'
+
+The name to use when logging information or errors. You can learn more about this option by reading the [bunyan documentation](https://github.com/trentm/node-bunyan).
+
+#### stream
+
+> type: stream
+
+> default: prettyStdOut
+
+Specified the stream where errors will be logged. By default this will format errors and log them to stdout. You can learn more about this option by reading the [bunyan documentation](https://github.com/trentm/node-bunyan).
+
+#### level
+
+> type: string
+
+> default: 'info'
+
+Set the precedence of errors that should be logged. For example, if this is set to 'info', any errors that are level 'info' or greater will be logged. You can learn more about this option by reading the [bunyan documentation](https://github.com/trentm/node-bunyan).
+
 
 ### Session
 
@@ -200,9 +283,90 @@ file:               /config/session.js
 override property:  session
 ```
 
+#### secret
+
+> type: string
+
+> default: 'SECRET_GOES_HERE'
+
+This is the secret used to sign the session ID cookie. This can be either a string for a single secret, or an array of multiple secrets. If an array of secrets is provided, only the first element will be used to sign the session ID cookie, while all the elements will be considered when verifying the signature in requests. You can learn more about this option by reading the [express-session documentation](https://github.com/expressjs/session).
+
+#### resave
+
+> type: boolean
+
+> default: false
+
+Forces the session to be saved back to the session store, even if the session was never modified during the request. You can learn more about this option by reading the [express-session documentation](https://github.com/expressjs/session).
+
+#### saveUninitialized
+
+> type: boolean
+
+> default: false
+
+Forces a session that is "uninitialized" to be saved to the store. A session is uninitialized when it is new but not modified. You can learn more about this option by reading the [express-session documentation](https://github.com/expressjs/session).
+
 ### Webserver
 
 ```
 file:               /config/webserver.js
 override property:  webserver
 ```
+
+#### hostname
+
+> type: string
+
+> default: 'localhost'
+
+Specifies the hostname for your application. This is ued by OAuth authentication to know where users should be redirected after authenticating, among other places in the codebase.
+
+#### http.port
+
+> type: number
+
+> default: 3000
+
+The port at which the unencrypted (http) application is accessible.
+
+#### http.proxyPort
+
+> type: number
+
+> default: 3000
+
+If your application is running behind a proxy server *such as nginx) this option specifies the port that the node process is running on. For example, nginx may be running on port 80 but your node process is running on port 3000. In this example the http.port would be 80 and the http.proxyPort would be 3000.
+
+#### https.port
+
+> type: number
+
+> default: 434
+
+Optional. The port at which the encrypted (https) application is accessible.
+
+#### https.proxyPort
+
+> type: number
+
+> default: 3434
+
+If your application is running behind a proxy server *such as nginx) this option specifies the port that the node process is running on. For example, nginx may be running on port 434 but your node process is running on port 3434. In this example the https.port would be 434 and the https.proxyPort would be 3434.
+
+#### https.keyPath
+
+> type: string
+
+> default: undefined
+
+The path to the SSL certificate key file. If you are running nginx in front of your web application then this should be handled by nginx instead. Perk ships with an insecure private key that you can use for development, but should not be used for production.
+
+#### https.certPath
+
+> type: string
+
+> default: undefined
+
+The path to the SSL certificate file. If you are running nginx in front of your web application then this should be handled by nginx instead. Perk ships with an insecure certificate that you can use for development, but should not be used for production.
+

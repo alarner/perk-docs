@@ -79,6 +79,34 @@ NODE_ENV=production npm start
 
 ## CLI configuration
 
+Perk has a command line configuration tool specifically designed to help you build and manage local machine overrides. The first time you run `npm run dev` you will encounter this tool. It will ask you to fill in some information about your machine so that Perk can automatically do some configuration for you. The information that you enter will be automatically saved in `/config/local.js`. The tool will look like this...
+
+![config template](/assets/images/guides/getting-started/config-template.jpg)
+
+You have the power to modify what information the CLI configuration tool asks for. Imagine you add Twilio as a dependency to your app. It's bad practice to check API keys into your repository (especially if it's public) so you don't want to check in your Twilio API key. Instead, you can prompt other developers who wish to run your app for their Twilio API key the first time the run `npm run dev`. You do this by modifying the `/config/local.template.js`.
+
+```js
+module.exports = {
+	database: {
+		client: '[string] The type of database to use (pg, mysql, mariasql, ...)',
+		connection: {
+			host: '[string] The database host',
+			user: '[string] The database user',
+			password: '[string] The database user\'s password',
+			database: '[string] The database name'
+		}
+	},
+	session: {
+		secret: '[string] The secret key to use for encrypting sessions'
+	},
+	twilio: {
+		key: '[string] Twilio API key'
+	}
+};
+```
+
+This file is simply a JSON structure that describes the fields that you wish to fill when starting your app for the first time. Each property value in the JSON structure desribes the type of data that you expect (string, number, boolean, json) and a description of the information you wish to collect. After adding the `twilio` section new developers will be prompted for that information. There's more detailed documentation on the [config templating tool](https://github.com/alarner/config-template) available.
+
 ## Configuration options
 
 Below you'll find a complete list of configuration options:

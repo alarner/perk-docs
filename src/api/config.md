@@ -264,6 +264,14 @@ The name of the database to connect to. Running `createdb test` on the command l
 
 The name of the database table used to store migration history. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
 
+#### migrations.directory
+
+> type: string
+
+> default: 'migrations'
+
+The directory where migrations live. You can learn more about this option by reading the [knex documentation](http://knexjs.org/).
+
 #### seeds.directory
 
 > type: string

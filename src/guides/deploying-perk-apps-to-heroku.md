@@ -54,7 +54,6 @@ On the command line make sure you are in the root directory of the app you want 
 	* `git commit -m "Build"`  (commit new files)
 	* `npm version patch` (updates the current version of your code)
 1. `git push heroku master`
-	* Builds your code for production (minifies)
 	* Pushes your code to Heroku and deploy your app.
 	* Runs any database migrations that you've added.
 1. `heroku open`
@@ -62,9 +61,18 @@ On the command line make sure you are in the root directory of the app you want 
 
 ### Re-deploying
 
-Any time you make changes to your app, you can simply add commit and push those changes to your heroku remote by running:
+Any time you make changes to your app, you can simply add and commit those changes. Lastly, follow these steps to deploy:
 
-```
+```bash
+# builds your code for production
+npm run build
+# add new files		
+git add .
+# commit new files
+git commit -m "Build"
+# updates the current version of your code
+npm version patch
+# deploys your app and runs migrations
 git push heroku master
 ```
 

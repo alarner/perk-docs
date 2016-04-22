@@ -38,7 +38,7 @@ On the command line make sure you are in the root directory of the app you want 
 	* `git commit -m "Initial commit"`
 1. `heroku create`
 	* This will spin up a new Heroku server.
-1. `heroku addons:create redistogo:nano`
+1. `heroku addons:create heroku-redis:hobby-dev`
 	* This will spin up a Redis server to store your user sessions.
 1. `heroku addons:create heroku-postgresql:hobby-dev`
 	* This will spin up a PostgreSQL database to store your data.
@@ -48,9 +48,15 @@ On the command line make sure you are in the root directory of the app you want 
 	* Specifies a secret session code for encrypting your user sessions.
 1. `heroku config:set HEROKU_POSTINSTALL=true`
 	* Tells our postinstall script to run migrations for Heroku.
+1. Build your code for production use and re-commit
+	* `npm run build` (builds your code for production)
+	* `git add .` (add new files)
+	* `git commit -m "Build"`  (commit new files)
+	* `npm version patch` (updates the current version of your code)
 1. `git push heroku master`
+	* Builds your code for production (minifies)
 	* Pushes your code to Heroku and deploy your app.
-	* This will also run any database migrations that you've added.
+	* Runs any database migrations that you've added.
 1. `heroku open`
 	* Opens the deployed app in your browser.
 

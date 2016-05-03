@@ -23,12 +23,12 @@ layout: topic.html
 	* [Saving models](#saving-models)
 	* [Fetching a single model](#fetching-a-single-model)
 	* [Fetching a list of model](#fetching-a-list-of-models)
-1. [Associations]()
-	* [One to one]()
-	* [One to many]()
-	* [Many to many]()
-1. [Seed data]()
-1. [Configuration]()
+1. [Associations](#associations)
+	* [One to one](#one-to-one)
+	* [One to many](#one-to-many)
+	* [Many to many](#many-to-many)
+1. [Seed data](#seed-data)
+1. [Configuration](#configuration)
 
 ## Overview
 
@@ -237,7 +237,7 @@ author
 To retreive a single model we can use the [fetch](http://bookshelfjs.org/#Model-instance-fetch) method.
 
 ```js
-Author.forge({id: 1}).fetch().then(function(author) {
+new Author({id: 1}).fetch().then(function(author) {
 	console.log('The author is', author.get('name'));
 });
 ```
@@ -304,7 +304,7 @@ module.exports = bookshelf.model('Address', {
 To get the address for a given person we can use the bookshelf [related](http://bookshelfjs.org/#Model-instance-related) method.
 
 ```js
-let bob = Person.forge({id: 3});
+let bob = new Person({id: 3});
 bob.related('address').then(function(address) {
 	console.log(address);
 });
@@ -313,7 +313,7 @@ bob.related('address').then(function(address) {
 Similarly, we can get the person for a given address.
 
 ```js
-let mainSt = Address.forge({id: 18});
+let mainSt = new Address({id: 18});
 mainSt.related('person').then(function(person) {
 	console.log(person);
 });
@@ -321,28 +321,28 @@ mainSt.related('person').then(function(person) {
 
 ### One to many
 
-An example of a one to many relationship would be between authors and books. An author can have many books, but a book belongs to only one author.
+An example of a one to many relationship would be between books and pages. A book can have many pages, but a page will belong to only one book.
 
 ```js
 // Associated models must be required in this file
-require('./Book');
-module.exports = bookshelf.model('Author', {
-	tableName: 'authors',
+require('./Page');
+module.exports = bookshelf.model('Book', {
+	tableName: 'books',
 	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],
-	books: function() {
-		return this.hasMany('Book', 'authorId');
+	pages: function() {
+		return this.hasMany('Page', 'bookId');
 	}
 });
 ```
 
 ```js
 // Associated models must be required in this file
-require('./Author');
-module.exports = bookshelf.model('Book', {
-	tableName: 'books',
+require('./Book');
+module.exports = bookshelf.model('Page', {
+	tableName: 'pages',
 	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],
-	author: function() {
-		return this.belongsTo('Author', 'authorId');
+	book: function() {
+		return this.belongsTo('Book', 'bookId');
 	}
 });
 ```
@@ -351,4 +351,117 @@ For one to many relationships you may use the bookshelf [related](http://bookshe
 
 ### Many to many
 
+> Want some code? Here is a [complete working example](https://github.com/alarner/perk-many-to-many) using Perk describing how to build a many to many relationship.
+
+An example of a many to many relationship would be between colleges and applications. A student may send the same application to many colleges and a college may receive applications from many students. Many to many relationships are more complicated because they involve the use of a [associative table/entity](https://en.wikipedia.org/wiki/Associative_entity). If we were to model out the college / application stucture from the ground up we would need the following files:
+
+#### /migrations/colleges.js
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.createTable('colleges', function(t) {
+		t.increments('id').unsigned().primary();
+		t.dateTime('createdAt').notNull();
+		t.dateTime('updatedAt').nullable();
+		t.dateTime('deletedAt').nullable();
+
+		t.string('name').notNull();
+		t.string('state').notNull();
+		t.string('website').notNull();
+	});
+};
+
+exports.down = function(knex, Promise) {
+	return knex.schema.dropTable('colleges');
+};
+```
+
+#### /migrations/applications.js
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.createTable('applications', function(t) {
+		t.increments('id').unsigned().primary();
+		t.dateTime('createdAt').notNull();
+		t.dateTime('updatedAt').nullable();
+		t.dateTime('deletedAt').nullable();
+
+		t.string('firstName').notNull();
+		t.string('lastName').notNull();
+		t.decimal('gpa', 3, 2).notNull();
+		t.text('essay').notNull();
+	});
+};
+
+exports.down = function(knex, Promise) {
+	return knex.schema.dropTable('applications');
+};
+```
+
+#### /migrations/collegeApplications.js
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.createTable('collegeApplications', function(t) {
+		t.integer('collegeId') // collegeId is a foreign key to the colleges table
+			.unsigned()
+			.notNull()
+			.references('id')
+			.inTable('colleges')
+			.onDelete('CASCADE');
+		t.integer('applicationId') // applicationId is a foreign key to the applications table
+			.unsigned()
+			.notNull()
+			.references('id')
+			.inTable('applications')
+			.onDelete('CASCADE');
+	});
+};
+
+exports.down = function(knex, Promise) {
+	return knex.schema.dropTable('collegeApplications');
+};
+```
+
+#### /models/College.js
+```js
+require('./Application');
+module.exports = bookshelf.model('College', {
+	tableName: 'colleges',
+	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],
+	applications: function() {
+		return this.belongsToMany('Application', 'collegeApplications', 'applicationId', 'collegeId');
+	}
+});
+```
+
+#### /models/Application.js
+```js
+require('./Application');
+module.exports = bookshelf.model('Application', {
+	tableName: 'applications',
+	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],
+	colleges: function() {
+		return this.belongsToMany('College', 'collegeApplications', 'collegeId', 'applicationId');
+	}
+});
+```
+
+Here is a [complete working example](https://github.com/alarner/perk-many-to-many) using Perk describing how to build a many to many relationship.
+
+## Seed data
+
+Seed data allows you to easily pre-populate your database with data. You can specify where your seed data lives in the [database.seeds.directory](/api/config.html#seeds-directory) property of your configuration file.
+
+### To create a new seed file:
+
+Run `knex seed:make seed_file_name`
+
+> Be careful of race conditions that may occur n your seed files if you use _Promise.join_.
+
+### To run your seed files:
+
+Run `knex seed:run`
+
+
+
 ## Configuration
+
+Detailed information on how to configure your database [can be found here](/api/config.html#database).

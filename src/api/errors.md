@@ -186,4 +186,9 @@ Returns a string representation of the error specified by the descriptor. If no 
 
 ## Additional information
 
-Perk uses the 
+Perk uses the howhap suite of libraries for dealing with errors. You can find more information in their documentation pages:
+
+* [howhap](https://github.com/alarner/howhap)
+* [howhap-middleware](https://github.com/alarner/howhap-middleware)
+* [howhap-list](https://github.com/alarner/howhap-list)
+* [howhap-fetch](https://github.com/alarner/howhap-fetch)

@@ -13,6 +13,7 @@ layout: topic.html
 1. [Interactive CLI configuration](#cli-configuration)
 1. [Full list of configuration options](#configuration-options)
 	* [Authentication](#authentication)
+	* [Build](#build)
 	* [Database](#database)
 	* [Logging](#logging)
 	* [Session](#session)
@@ -23,6 +24,7 @@ layout: topic.html
 Perk has a multi-layers configuration system. Default config information is specified in files in your `/config` directory. Those files are:
 
 1. `/config/auth.js`
+1. `/config/build.js`
 1. `/config/database.js`
 1. `/config/logging.js`
 1. `/config/session.js`
@@ -208,6 +210,79 @@ A boolean value representing whether or not the user should be required to provi
 > default: '/dashboard'
 
 The url where the user should be redirected after successfully logging in or registering.
+
+### Build
+
+```
+file:               /config/build.js
+override property:  build
+```
+
+#### scripts.loader
+
+> type: string
+
+> default: 'webpack (development) / browserify (production)'
+
+The scripts.loader parameter specifies which tool to use for bundling client side JavaScript modules. The options are 'webpack' or 'browserify'.
+
+#### scripts.files
+
+> type: array of strings
+
+> default: ['public/scripts/main.js']
+
+A list of files to use as entry points for client side JavaScript code. All files will be run through the specified scripts.loader and concatenated together into a bundle.js file or a bundle.min.js file depending on if you are running the build process via the `npm run build` command (minified) or `npm run dev` command (un-minified). The paths should be specified relative to the project root directory.
+
+#### styles.directory
+
+> type: string
+
+> default: 'public/styles'
+
+The path to a directory where your Sass styles live. All files in this directory will be processed into CSS during the build process. Files that begin with an `_` will be treated as partials and not processed into their own CSS files. Instead they will only be used when imported into other Sass files. The final processed CSS files will retain their file name with `.css` or `.min.css` appended depending on if you are running the build process via the `npm run build` command (minified) or `npm run dev` command (un-minified).
+
+#### server.files
+
+> type: array of strings
+
+> default:
+
+> 	[
+
+> 		'views/**/*.ejs',
+
+> 		'routes/**/*.js',
+
+> 		'models/**/*.js',
+
+> 		'lib/**/*.js',
+
+> 		'config/**/*.js',
+
+> 		'errors/**/*.js',
+
+> 		'app.js'
+
+> 	]
+
+A list of files or [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming) to watch for changes while running the server via `npm run dev`. If a change is detected in any of the matched files or patterns, the server will automatically restart.
+
+#### watching.poll
+
+> type: boolean
+
+> default: false
+
+Specifies whether or not the build process should use [polling](https://www.npmjs.com/package/chokidar#performance) to watch for file changes. Polling can lead to high CPU utilization, but may be necessary to set this to true to successfully watch files over a network, or to successfully watch files in other non-standard situations. Setting to true explicitly on OS X overrides the useFsEvents default.
+
+#### watching.interval
+
+> type: number
+
+> default: 100
+
+The number of milliseconds to wait in between polls. Only used if watching.poll is set to true.
 
 ### Database
 

@@ -8,14 +8,18 @@ layout: topic.html
 ## Table of Contents
 
 1. [Overview](#overview)
-1. [req.flash(type, message)]()
-1. [Displaying flash messages in a view]()
+1. [req.flash(type, message)](#req-flash-type-message-)
+1. [Displaying flash messages](displaying-flash-messages)
 
 ## Overview
 
 Flash messages allow you to send non-error messages in between HTTP requests. For example, if you want to redirect to a dashboard page upon successful submission of a form, and want to show a success message on the dashboard page.
 
+<<<<<<< HEAD
+## req.flash(type, message)
+=======
 ### req.flash(type, message)
+>>>>>>> dc2e9f749b9aff33fbdaf0fb3eb686736b683c0f
 
 Creates a message to be used in the next page view.
 

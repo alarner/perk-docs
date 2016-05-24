@@ -52,7 +52,102 @@ The second function within your migration file is `exports.down`. This functions
 
 ## Creating a new database table
 
+Let's go through a real life example. Let's say I want to create a database table that will hold product information including product name, description, price and category. Here's the steps we will take:
+
+1. Create a new migration file with knex cli
+1. Write the code for the `exports.up` function
+1. Write the code for the `exports.down` function
+1. Run the migration
+
+### Step 1: Create a new migration file with knex cli
+
+You can refer back to the [Creating a migration file](#creating-a-migration-file) section of this guide as well.
+
+```
+knex migrate:make create_products
+```
+
+This will create a file like `/migrations/20160524110801_create_products.js`. Your timestamp will be different. Open that file.
+
+### Step 2: Write the code for the `exports.up` function
+
+Inside of the `exports.up` function of your newly created migration file add the following code:
+
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.createTable('products', function(t) {
+		t.increments('id').unsigned().primary();
+		t.dateTime('createdAt').notNull();
+		t.dateTime('updatedAt').nullable();
+		t.dateTime('deletedAt').nullable();
+
+		t.string('name').notNull();
+		t.text('decription').nullable();
+		t.decimal('price', 6, 2).notNull();
+		t.enum('category', ['apparel', 'electronics', 'furniture']).notNull();
+	});
+};
+```
+
+Our `exports.up` and `exports.down` functions should always return a promise. In thie case we are using `knex.schema.createTable` to create a new database table. We pass in the name of the table and a callback function, in which we can specify the columns that should exist on the table. Notice that the callback takes an argument `t`, which gives us a reference to the table. For each column that we want to create we specify a column type (increments, dateTime, string, text, decimal, enum, etc.) as well as a column name. Certain column types take additional arguments. We can optionally specify more information about each column such as whether or not the column is nullable, its' default value among others. You can find the full list of functionality in the [knex documentation](http://knexjs.org/#Schema).
+
+### Step 3: Write the code for the `exports.down` function
+
+Inside of the `exports.down` function of your create_products migration file add the following code:
+
+```js
+exports.down = function(knex, Promise) {
+	return knex.schema.dropTable('products');
+};
+```
+
+This code is meant to do the opposite of `exports.up` in case we need to quickly undo a migration. In this case since we created the products table in `exports.up` we will drop the products table in `exports.down`. As before, we will also return the promise that knex gives to us when calling dropTable.
+
+### Step 4: Run the migration
+
+Now that the migration has been created and defined, we will run the migration on our local database. To do this use the following command:
+
+```
+knex migrate:latest
+```
+
+> This will cause any new migrations to run. To quickly undo the migration you may run `knex migrate:rollback`
+
+Knex keeps track of which migrations have been run so that it doesn't try to run the same migration twice.
+
 ## Adding a column
+
+The process of adding a column is similar to creating a table. We never want to edit a migration file after it has been run because when we run `knex migrate:latest` knex will not make the change. Migrations will only run once. Instead of modifying our existing migration we will create a new migration to specifically add a new column. In this case let's add a quantity column to our products table.
+
+### Step 1: Create a new migration file with knex cli
+
+```
+knex migrate:make add_quantity_to_products
+```
+
+### Steps 2 & 3: Write the code for `exports.up` and `exports.down`
+
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.table('products', function(t) {
+		t.integer('quantity').notNull().defaultTo(0);
+	});
+};
+
+exports.down = function(knex, Promise) {
+	return knex.schema.table('products', function(t) {
+		t.dropColumn('quantity');
+	});
+};
+```
+
+> In this case we are using `knex.schema.table` instead of `knex.schema.createTable`. This allows us to obtain a reference to an existing table for modification. Our `exports.up` function adds a new integer column called quantity, which defaults to a value of zero. `exports.down` undoes the add column by removing it in case we need to rollback our migration.
+
+### Step 4: Run the migration
+
+```
+knex migrate:latest
+```
 
 ## Removing a column
 

@@ -151,6 +151,60 @@ knex migrate:latest
 
 ## Removing a column
 
+### Step 1: Create a new migration file with knex cli
+
+```
+knex migrate:make remove_category_from_products
+```
+
+### Steps 2 & 3: Write the code for `exports.up` and `exports.down`
+
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.table('products', function(t) {
+		t.dropColumn('category');
+	});
+};
+
+exports.down = function(knex, Promise) {
+	return knex.schema.table('products', function(t) {
+		t.enum('category', ['apparel', 'electronics', 'furniture']).notNull();
+	});
+};
+```
+
+### Step 4: Run the migration
+
+```
+knex migrate:latest
+```
+
 ## Adding an index
 
-## Removing an index
+### Step 1: Create a new migration file with knex cli
+
+```
+knex migrate:make index_product_price
+```
+
+### Steps 2 & 3: Write the code for `exports.up` and `exports.down`
+
+```js
+exports.up = function(knex, Promise) {
+	return knex.schema.table('products', function(t) {
+		t.index([ 'price' ]);
+	});
+};
+
+exports.down = function(knex, Promise) {
+	return knex.schema.table('products', function(t) {
+		t.dropIndex([ 'price' ]);
+	});
+};
+```
+
+### Step 4: Run the migration
+
+```
+knex migrate:latest
+```

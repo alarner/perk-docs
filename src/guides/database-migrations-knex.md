@@ -17,7 +17,7 @@ Migrations are simply files that live in the `/migrations` directory of your pro
 * [20151009115505_create_users.js](https://github.com/alarner/perk/blob/master/migrations/20151009115505_create_users.js)
 * [20151009155020_create_authentication.js](https://github.com/alarner/perk/blob/master/migrations/20151009155020_create_authentication.js)
 
-> Notice how these files each start with a long number. This number is a timestamp representing when the migration was created. Migrations run in chronological order and this timestamp preserves the order.
+> Notice how these files each start with a long number. This number is a timestamp representing when the migration was created. Migrations run in chronological order and this timestamp preserves that order.
 
 These migrations define how user information is stored within Perk, but you can also create your own migrations.
 
@@ -46,9 +46,9 @@ exports.down = function(knex, Promise) {
 
 ## Structure of a migration file
 
-There are two functions within your newly created migration file. The first is `exports.up`, which specifies which commands should be run to make the database change that you'd like to make. Usually you'll be running one or more commands found in the [schema builder](http://knexjs.org/#Schema) section of the Knex documentation. These are things like creating database tables, adding or removing a column from a table, changing indexes, etc.
+There are two functions within your newly created migration file. The first is `exports.up`, which specifies the commands that should be run to make the database change that you'd like to make. Usually you'll be running one or more commands found in the [schema builder](http://knexjs.org/#Schema) section of the Knex documentation. These are things like creating database tables, adding or removing a column from a table, changing indexes, etc.
 
-The second function within your migration file is `exports.down`. This functions goal is to do the opposite of what `exports.up` did. If `exports.up` created a table, then `exports.down` will drop that table. If `exports.up` created a added a column, then `exports.down` will remove that column. The reason to include `exports.down` is so that you can quickly undo a migration should you need to.
+The second function within your migration file is `exports.down`. This functions goal is to do the opposite of what `exports.up` did. If `exports.up` created a table, then `exports.down` will drop that table. If `exports.up` added a column, then `exports.down` will remove that column. The reason to include `exports.down` is so that you can quickly undo a migration should you need to.
 
 ## Creating a new database table
 
@@ -89,7 +89,7 @@ exports.up = function(knex, Promise) {
 };
 ```
 
-Our `exports.up` and `exports.down` functions should always return a promise. In thie case we are using `knex.schema.createTable` to create a new database table. We pass in the name of the table and a callback function, in which we can specify the columns that should exist on the table. Notice that the callback takes an argument `t`, which gives us a reference to the table. For each column that we want to create we specify a column type (increments, dateTime, string, text, decimal, enum, etc.) as well as a column name. Certain column types take additional arguments. We can optionally specify more information about each column such as whether or not the column is nullable, its' default value among others. You can find the full list of functionality in the [knex documentation](http://knexjs.org/#Schema).
+Our `exports.up` and `exports.down` functions should always return a promise. In this case we are using `knex.schema.createTable` to create a new database table. We pass in the name of the table and a callback function, in which we can specify the columns that should exist on the table. Notice that the callback takes an argument `t`, which gives us a reference to the table. For each column that we want to create we specify a column type (increments, dateTime, string, text, decimal, enum, etc.) as well as a column name. Certain column types take additional arguments. We can optionally specify more information about each column such as whether or not the column is nullable, its' default value among others. You can find the full list of functionality in the [knex documentation](http://knexjs.org/#Schema).
 
 ### Step 3: Write the code for the `exports.down` function
 

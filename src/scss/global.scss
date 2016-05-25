@@ -23,6 +23,46 @@ nav {
 	margin-bottom: $column-margin;
 }
 
+.btn {
+	display: inline-block;
+	background: $button;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	color: $paragraph;
+
+	&:hover {
+		background: darken($button, 60%);
+		color: #fff;
+	}
+
+	&.cta {
+		background: darken($primary, 10%);
+		color: #fff;
+
+		&:hover {
+			background: darken($primary, 20%);
+			color: #fff;
+		}
+	}
+
+
+	div {
+		text-align: center;
+
+		&.small {
+			font-size: 14px;
+		}
+
+		&.large {
+			font-size: 20px;
+		}
+	}
+
+	&.lg {
+		min-width: 24rem;
+	}
+}
+
 h1 {
 	color: $heading;
 	font-weight: 400;

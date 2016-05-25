@@ -5,8 +5,6 @@ date: 2016-02-27
 layout: topic.html
 ---
 
-## { Coming soon }
-
 ## Table of Contents
 
 1. [Overview](#overview)

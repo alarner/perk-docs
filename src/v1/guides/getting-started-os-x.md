@@ -11,11 +11,11 @@ Perk is glue that holds together a collection of [powerful](http://passportjs.or
 For the purposes of this guide we'll assume that you already have the following software installed:
 
 1. Node (version 5.0+)
-	> How can I tell if node is installed? Type `node -v` into your terminal. It should respond with the version of node that you have installed. If it's not installed you can follow our guide to [install node on your mac](/guides/install-node-redis-and-postgres-on-your-mac.html).
+	> How can I tell if node is installed? Type `node -v` into your terminal. It should respond with the version of node that you have installed. If it's not installed you can follow our guide to [install node on your mac](/v1/guides/install-node-redis-and-postgres-on-your-mac.html).
 1. redis
-	> How can I tell if redis is installed? Type `redis-cli -v` into your terminal. It should respond with the version of redis that you have installed. If it's not installed you can follow our guide to [install redis on your mac](/guides/install-node-redis-and-postgres-on-your-mac.html).
+	> How can I tell if redis is installed? Type `redis-cli -v` into your terminal. It should respond with the version of redis that you have installed. If it's not installed you can follow our guide to [install redis on your mac](/v1/guides/install-node-redis-and-postgres-on-your-mac.html).
 1. PostgreSQL
-	> How can I tell if postgres is installed? Type `psql -V` into your terminal. It should respond with the version of postgres that you have installed. If it's not installed you can follow our guide to [install postgres on your mac](/guides/install-node-redis-and-postgres-on-your-mac.html).
+	> How can I tell if postgres is installed? Type `psql -V` into your terminal. It should respond with the version of postgres that you have installed. If it's not installed you can follow our guide to [install postgres on your mac](/v1/guides/install-node-redis-and-postgres-on-your-mac.html).
 
 ### Installing Perk
 
@@ -50,7 +50,7 @@ The bare minimum information that you will need to fill out when your app first 
 
 > If you are not building a database driven app then you can leave the database connection information blank.
 
-You can learn about all the different configuration options in the [configuration](/docs/configuration.html) documentation. If you ever need to change these configuration values at any point, you can change them in the `config/local.js` file.
+You can learn about all the different configuration options in the [configuration](/v1/api/config.html) documentation. If you ever need to change these configuration values at any point, you can change them in the `config/local.js` file.
 
 Use the arrow keys / enter key to navigate the configuration interface. Once you are done type `crtl + s` to save and continue.
 
@@ -60,10 +60,10 @@ After saving your app should be up and running! Go to [http://localhost:3000](ht
 
 ### What's next?
 
-There are a bunch of other great [guides](/guides) on topics like:
+There are a bunch of other great [guides](/v1/guides) on topics like:
 
-* [Creating a static home page](/guides/creating-a-static-home-page.html)
-* [Building your first API](/guides/building-your-first-api.html)
-* [User authentication with Facebook](/guides/user-auth-with-facebook.html)
-* [Database migrations with Knex](/guides/database-migrations-knex.html)
-* [and many more...](/guides)
+* [Creating a static home page](/v1/guides/creating-a-static-home-page.html)
+* [Building your first API](/v1/guides/building-your-first-api.html)
+* [User authentication with Facebook](/v1/guides/user-auth-with-facebook.html)
+* [Database migrations with Knex](/v1/guides/database-migrations-knex.html)
+* [and many more...](/v1/guides)

@@ -14,9 +14,9 @@ Querying data from your database and displaying it on a page is a basic task tha
 
 ## Step 1: Creating a model
 
-Imagine we want to display a list of products or a single product on one of the pages of our application. You can follow the [Database migrations with knex](/guides/database-migrations-knex.html) guide for information on how to create the database table to store your products. For this guide we will assume that your migration has been created and run (i.e. the database table exists).
+Imagine we want to display a list of products or a single product on one of the pages of our application. You can follow the [Database migrations with knex](/v1/guides/database-migrations-knex.html) guide for information on how to create the database table to store your products. For this guide we will assume that your migration has been created and run (i.e. the database table exists).
 
-Once the necessary database table has been created you can create a [Bookshelf model](http://bookshelfjs.org/) to make it easier to interact with (save and query) records in that table. By convention, Bookshelf models live in the `/models` directory of your application. Model files are fairly small. They simply tell Bookshelf which table the model should interact with, as well as any [associations](http://perkframework.com/api/database.html#associations) that the model may have with other models. Here's what the model file should look like for a Product.
+Once the necessary database table has been created you can create a [Bookshelf model](http://bookshelfjs.org/) to make it easier to interact with (save and query) records in that table. By convention, Bookshelf models live in the `/models` directory of your application. Model files are fairly small. They simply tell Bookshelf which table the model should interact with, as well as any [associations](/v1/api/database.html#associations) that the model may have with other models. Here's what the model file should look like for a Product.
 
 ### /models/Product.js
 
@@ -33,7 +33,7 @@ Notice that this code defines a name for our model `... bookshelf.model('Product
 
 ## Step 2: Creating a route
 
-Routes allow Perk developers to easily determine which backend code should run when a specific URL is requested. You can read more about routes in the [routing documentation](http://perkframework.com/api/routing.html).
+Routes allow Perk developers to easily determine which backend code should run when a specific URL is requested. You can read more about routes in the [routing documentation](/v1/api/routing.html).
 
 We will create a new routers to break up our routes into smaller logical pieces. To create a new route you can use the `express.Router()` method. First create a new file. By convention each new router lives in its own file inside of the `/routes` directory. Inside of that new file you can load express, create a new router and add your first route:
 
@@ -103,6 +103,6 @@ router.get('/list', function(req, res, next) {
 // ...
 ```
 
-> If you want HTML output instead of JSON you may use a view and follow the instructions in the [Creating a dynamic view with ejs](http://localhost:8080/guides/creating-a-dynamic-view-with-ejs.html) guide. Instead of passing in a hard coded object like the example shows, you may pass in the results from the database query as shown above.
+> If you want HTML output instead of JSON you may use a view and follow the instructions in the [Creating a dynamic view with ejs](/v1/guides/creating-a-dynamic-view-with-ejs.html) guide. Instead of passing in a hard coded object like the example shows, you may pass in the results from the database query as shown above.
 
 If you want to query a single record you may use `.fetch()` instead of `.fetchAll()`. A full list of methods available on your models can be found in the [Bookshelf.js documentation](http://bookshelfjs.org).

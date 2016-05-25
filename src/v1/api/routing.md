@@ -231,8 +231,8 @@ router.put('/edit-blog-post', isAuthenticated, function(req, res, next) {
 
 Here are a few guides that walk you through examples of how to use routes within your code:
 
-* [Creating new pages and routes](http://localhost:8080/guides/creating-new-pages-and-routes.html)
-* [Creating a dynamic view with ejs](http://localhost:8080/guides/creating-a-dynamic-view-with-ejs.html)
+* [Creating new pages and routes](/v1/guides/creating-new-pages-and-routes.html)
+* [Creating a dynamic view with ejs](/v1/guides/creating-a-dynamic-view-with-ejs.html)
 
 Perk uses express for routing, so you can find more information within the express documentation.
 

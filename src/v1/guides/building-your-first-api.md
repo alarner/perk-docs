@@ -39,7 +39,7 @@ exports.down = function(knex, Promise) {
 };
 ```
 
-For each database migration we are going to describe how to change the database schema (that's the *exports.up* part) as well as how to undo that change in case we need to (that's the *exports.down* part). You can read more about migrations in the [Database Migrations with Knex](/guides/database-migrations-knex.html) guide.
+For each database migration we are going to describe how to change the database schema (that's the *exports.up* part) as well as how to undo that change in case we need to (that's the *exports.down* part). You can read more about migrations in the [Database Migrations with Knex](/v1/guides/database-migrations-knex.html) guide.
 
 Once the migration is complete, run the command:
 

@@ -65,7 +65,7 @@ This will render the view in `/views/blog/index.ejs` so we need to create this f
 </html>
 ```
 
-If we were truely creating a blog we would want to display a list of posts here. You can learn about how to use models to query and [display data from the database](/guides/querying-and-displaying-data-with-models.html).
+If we were truely creating a blog we would want to display a list of posts here. You can learn about how to use models to query and [display data from the database](/v1/guides/querying-and-displaying-data-with-models.html).
 
 ### 3. Load and use the route file
 

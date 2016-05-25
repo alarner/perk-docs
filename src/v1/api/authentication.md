@@ -110,7 +110,7 @@ In addition to traditional password based authentication, Perk also supports OAu
 
 ### Obtaining API Keys
 
-Each provider has a different set of steps that developers must take to obtain client id / client secret information. You can refer to our guide on [user authentication with Facebook](/guides/user-auth-with-facebook.html) for Facebook specific instructions or look up provider specific instructions for [Google](https://developers.google.com/identity/protocols/OAuth2#basicsteps) and [Trello](https://trello.com/app-key).
+Each provider has a different set of steps that developers must take to obtain client id / client secret information. You can refer to our guide on [user authentication with Facebook](/v1/guides/user-auth-with-facebook.html) for Facebook specific instructions or look up provider specific instructions for [Google](https://developers.google.com/identity/protocols/OAuth2#basicsteps) and [Trello](https://trello.com/app-key).
 
 ### Registering and Logging In
 
@@ -187,27 +187,4 @@ router.get('/dashboard', isLoggedIn, function(req, res, next) {
 
 ## Configuration
 
-Each authentication provider can be configured separately. Your configuration object in `/config/auth.js` should have multiple keys, one for each provider you wish to support. There is full documentation on all of the configuration options in the [authentication config](http://perkframework.com/api/config.html#authentication) section of the Perk API docs.
-
-<!--
-
-1. Username / Password Authentication (local)
-1. Google OAuth (google)
-1. Facebook OAuth (facebook)
-1. Trello OAuth (trello)
-
-More are coming soon. You can request support for a specific provider [here](https://github.com/alarner/perk/issues/1).
-
-Setting up authentication is a breeze. It all happens inside of your `/config/auth.js` file. Simply fill out the necessary information for the provider that you want to support. Then redirect your users to:
-
-* **/auth/:provider/login** to authenticate via an OAuth provider
-* **/auth/login** or **/auth/register** to authenticate via username and password
-* **/auth/logout** to log the user out of their current session
-
-You can also read the full guide on setting up [Facebook OAuth](/guides/user-auth-with-facebook.html).
-
-## Configuration
-
-Each authentication provider can be configured separately. Your configuration object in `/config/auth.js` should have multiple keys, one for each provider you wish to support. There is full documentation on all of the configuration options in the [authentication config](http://perkframework.com/api/config.html#authentication) section of the Perk API docs.
-
--->
+Each authentication provider can be configured separately. Your configuration object in `/config/auth.js` should have multiple keys, one for each provider you wish to support. There is full documentation on all of the configuration options in the [authentication config](/v1/api/config.html#authentication) section of the Perk API docs.

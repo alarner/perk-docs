@@ -3,9 +3,22 @@
 	<%
 		var g = null;
 		var pieces = path.split('/');
-		if(pieces.length >=2) {
-			g = pieces[1].toLowerCase();
+		if(pieces.length >=3) {
+			g = pieces[2].toLowerCase();
 		}
+	%>
+	<%/*
+		for(var i in collections) {
+			var indexes = collections[i].filter(function(file) {
+				return file.layout === 'topic-list.html';
+			});
+			if(indexes.length) {
+				var group = indexes[0];
+	%>
+				<a href="<%= group.path %>"<%- g === group.group ? ' class="active"' : '' %>><%= group.title %></a>
+	<%
+			}
+		}*/
 	%>
 	<% collections.group.forEach(function(group){ %>
 		<% if(group.group && collections[group.group] && collections[group.group].length) { %>

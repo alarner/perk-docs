@@ -8,7 +8,7 @@ order: 020
 
 > If you already have these installed, you can skip this step.
 
-Once you have [homebrew installed](/guides/installing-homebrew-on-your-mac.html) you can install node and redis very easily. If you're planning on building a database driven app you will want to install a database as well. We recommend Postgres. To install these three just type the following command into your terminal:
+Once you have [homebrew installed](/v1/guides/installing-homebrew-on-your-mac.html) you can install node and redis very easily. If you're planning on building a database driven app you will want to install a database as well. We recommend Postgres. To install these three just type the following command into your terminal:
 
 `brew install node redis postgres`
 

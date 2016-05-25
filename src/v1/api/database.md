@@ -48,7 +48,7 @@ To create a new migration using knex, simply run:
 
 `knex migrate:make my_migration_name`
 
-This will create a timestamped file name in your migrations directory. The locations of this directory is [configurable](/api/config.html#migrations-directory), but defaults to the `migrations` directory in the root of your project.
+This will create a timestamped file name in your migrations directory. The locations of this directory is [configurable](/v1/api/config.html#migrations-directory), but defaults to the `migrations` directory in the root of your project.
 
 ### Creating tables
 
@@ -448,7 +448,7 @@ Here is a [complete working example](https://github.com/alarner/perk-many-to-man
 
 ## Seed data
 
-Seed data allows you to easily pre-populate your database with data. You can specify where your seed data lives in the [database.seeds.directory](/api/config.html#seeds-directory) property of your configuration file.
+Seed data allows you to easily pre-populate your database with data. You can specify where your seed data lives in the [database.seeds.directory](/v1/api/config.html#seeds-directory) property of your configuration file.
 
 ### To create a new seed file:
 
@@ -464,4 +464,4 @@ Run `knex seed:run`
 
 ## Configuration
 
-Detailed information on how to configure your database [can be found here](/api/config.html#database).
+Detailed information on how to configure your database [can be found here](/v1/api/config.html#database).

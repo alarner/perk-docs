@@ -14,7 +14,7 @@ HTML files in Express (and by association Perk) are stored in the `/views` direc
 
 `client request` > `route` > `view`
 
-To modify our homepage we're going to open up `/views/index.ejs`. By default Perk views use the *ejs* templating engine, however just like any express app, you can use [whichever templating engine you like](http://expressjs.com/en/guide/using-template-engines.html). You can learn more about creating dynamic views with ejs by reading [the guide](/guides/creating-a-dynamic-view-with-ejs.html).
+To modify our homepage we're going to open up `/views/index.ejs`. By default Perk views use the *ejs* templating engine, however just like any express app, you can use [whichever templating engine you like](http://expressjs.com/en/guide/using-template-engines.html). You can learn more about creating dynamic views with ejs by reading [the guide](/v1/guides/creating-a-dynamic-view-with-ejs.html).
 
 By default `/views/index.ejs` looks like this:
 

@@ -65,5 +65,5 @@ There are a bunch of other great [guides](/guides) on topics like:
 * [Creating a static home page](/guides/creating-a-static-home-page.html)
 * [Building your first API](/guides/building-your-first-api.html)
 * [User authentication with Facebook](/guides/user-auth-with-facebook.html)
-* [Database migrations with Knex](/guides/database-migrations-with-knex.html)
+* [Database migrations with Knex](/guides/database-migrations-knex.html)
 * [and many more...](/guides)

@@ -59,6 +59,9 @@ let router = express.Router();
 router.post('/submit-form', function(req, res, next) {
 	// Route specific logic goes here
 });
+
+// Finally export it so it can be required in /app.js
+module.exports = router;
 ```
 
 One this new file has been created and set up, we're not quite done. The last step is to let our `/app.js` file that it needs to use our newly created router. To do so, update the [router section of the app.js](https://github.com/alarner/perk/blob/master/app.js#L49) to use the newly created route:

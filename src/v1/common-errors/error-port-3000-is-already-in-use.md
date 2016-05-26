@@ -1,6 +1,6 @@
 ---
-title: "FATAL: Port 3000 is already in use"
-description: "FATAL: Port 3000 is already in use"
+title: "error: Port 3000 is already in use"
+description: "error: Port 3000 is already in use"
 date: 2016-05-25
 layout: topic.html
 order: 500

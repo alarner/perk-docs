@@ -65,7 +65,7 @@ Noticed we've created an array of posts and assigned it to the variable `blogPos
 
 ### Rendering data in your view
 
-Now we need to actually use that data and display it within our view. Inside of the view that's getting loaded (`/views/blog/index.ejs`) we're going to iterate over the array of posts, and render them within the HTML:
+Now we need to actually use that data and display it within our view. Inside of the view that's getting loaded (`/views/blog/index.html`) we're going to iterate over the array of posts, and render them within the HTML:
 
 ```html
 <!DOCTYPE html>

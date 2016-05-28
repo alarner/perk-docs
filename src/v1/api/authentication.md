@@ -40,7 +40,7 @@ There are two methods for registering a user using an email and password. You ma
 
 To register a user using this method simply redirect users to `/auth/register` where they will be prompted to fill in their name, email address and password.
 
-You can style this registration page by modifying the view file in `/views/auth/register.ejs`
+You can style this registration page by modifying the view file in `/views/auth/register.html`
 
 #### via RESTful API
 
@@ -74,7 +74,7 @@ Logging in is handled very similarly to registering. There are two methods, a tr
 
 To log in using this method simply redirect users to `/auth/login` where they will be prompted to fill in their email address and password.
 
-You can style this log in page by modifying the view file in `/views/auth/login.ejs`
+You can style this log in page by modifying the view file in `/views/auth/login.html`
 
 #### via RESTful API
 

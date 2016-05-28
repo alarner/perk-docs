@@ -51,7 +51,7 @@ Since our route renders a new view we want to also create that view. In our rout
 res.render('blog/index');
 ```
 
-This will render the view in `/views/blog/index.ejs` so we need to create this file now. We'll just throw in some basic HTML:
+This will render the view in `/views/blog/index.html` so we need to create this file now. We'll just throw in some basic HTML:
 
 ```html
 <!DOCTYPE html>

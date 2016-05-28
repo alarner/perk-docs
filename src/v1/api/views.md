@@ -41,7 +41,7 @@ Returns undefined.
 > 	res.render('index');
 > });
 > ```
-> ##### views/index.ejs
+> ##### views/index.html
 > 
 > ```html
 > <!DOCTYPE html>
@@ -68,7 +68,7 @@ Returns undefined.
 > 	res.render('index', data);
 > });
 > ```
-> ##### views/index.ejs
+> ##### views/index.html
 > 
 > ```html
 > <!DOCTYPE html>

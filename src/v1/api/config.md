@@ -250,7 +250,7 @@ The path to a directory where your Sass styles live. All files in this directory
 
 > 	[
 
-> 		'views/**/*.ejs',
+> 		'views/**/*.html',
 
 > 		'routes/**/*.js',
 

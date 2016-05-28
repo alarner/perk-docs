@@ -39,22 +39,14 @@ On the command line make sure you are in the root directory of the app you want 
 1. `heroku create`
 	* This will spin up a new Heroku server.
 1. `heroku addons:create heroku-redis:hobby-dev`
-	* This will spin up a Redis server to store your user sessions.
+	* This will spin up a free Redis server to store your user sessions.
 1. `heroku addons:create heroku-postgresql:hobby-dev`
-	* This will spin up a PostgreSQL database to store your data.
-1. `heroku config:set NODE_ENV=heroku`
-	* Tells your Perk app to use Heroku specific configuration located in *config/env/heroku.js*.
+	* This will spin up a free PostgreSQL database to store your data.
 1. `heroku config:set SESSION_SECRET=your_secret_goes_here`
 	* Specifies a secret session code for encrypting your user sessions.
-1. `heroku config:set HEROKU_POSTINSTALL=true`
-	* Tells our postinstall script to run migrations for Heroku.
-1. Build your code for production use and re-commit
-	* `npm run build` (builds your code for production)
-	* `git add .` (add new files)
-	* `git commit -m "Build"`  (commit new files)
-	* `npm version patch` (updates the current version of your code)
 1. `git push heroku master`
 	* Pushes your code to Heroku and deploy your app.
+	* Runs your production build process for compiling scripts and styles.
 	* Runs any database migrations that you've added.
 1. `heroku open`
 	* Opens the deployed app in your browser.
@@ -63,17 +55,9 @@ On the command line make sure you are in the root directory of the app you want 
 
 Any time you make changes to your app, you can simply add and commit those changes. Lastly, follow these steps to deploy:
 
-```bash
-# builds your code for production
-npm run build
-# add new files		
-git add .
-# commit new files
-git commit -m "Build"
-# updates the current version of your code
-npm version patch
-# deploys your app and runs migrations
-git push heroku master
-```
-
-> This will also run any database migrations that you've added.
+1. `npm version patch`
+	* This will update the version of your app (inside of your package.json). If you've made changes to front-end code (scripts or styles) this will update their version so that any previously cached files on your users devices will be re-downloaded.
+1. `git push heroku master`
+	* Pushes your code to Heroku and deploy your app.
+	* Runs your production build process for compiling scripts and styles.
+	* Runs any database migrations that you've added.

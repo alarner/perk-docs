@@ -59,6 +59,9 @@ let router = express.Router();
 router.post('/submit-form', function(req, res, next) {
 	// Route specific logic goes here
 });
+
+// Finally export it so it can be required in /app.js
+module.exports = router;
 ```
 
 One this new file has been created and set up, we're not quite done. The last step is to let our `/app.js` file that it needs to use our newly created router. To do so, update the [router section of the app.js](https://github.com/alarner/perk/blob/master/app.js#L49) to use the newly created route:
@@ -228,8 +231,8 @@ router.put('/edit-blog-post', isAuthenticated, function(req, res, next) {
 
 Here are a few guides that walk you through examples of how to use routes within your code:
 
-* [Creating new pages and routes](http://localhost:8080/guides/creating-new-pages-and-routes.html)
-* [Creating a dynamic view with ejs](http://localhost:8080/guides/creating-a-dynamic-view-with-ejs.html)
+* [Creating new pages and routes](/v1/guides/creating-new-pages-and-routes.html)
+* [Creating a dynamic view with ejs](/v1/guides/creating-a-dynamic-view-with-ejs.html)
 
 Perk uses express for routing, so you can find more information within the express documentation.
 

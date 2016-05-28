@@ -3,8 +3,8 @@
 	<%
 		var g = null;
 		var pieces = path.split('/');
-		if(pieces.length >=2) {
-			g = pieces[1].toLowerCase();
+		if(pieces.length >=3) {
+			g = pieces[2].toLowerCase();
 		}
 	%>
 	<% collections.group.forEach(function(group){ %>
@@ -12,4 +12,5 @@
 			<a href="<%= group.path %>"<%- g === group.group ? ' class="active"' : '' %>><%= group.title %></a>
 		<% } %>
 	<% }); %>
+	<a href="https://github.com/alarner/perk" class="right-nav">Code on GitHub</a>
 </nav>

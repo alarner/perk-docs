@@ -6,7 +6,7 @@ layout: topic.html
 order: 120
 ---
 
-Building [static pages](/guides/creating-a-static-home-page.html) is great, but sometimes we need to feed dynamic content into our templates. Because Perk is built on top of Express, it supports all the templating engines and ships with [ejs](http://www.embeddedjs.com/). In this guide we'll cover how to pass data from a route to an ejs template.
+Building [static pages](/v1/guides/creating-a-static-home-page.html) is great, but sometimes we need to feed dynamic content into our templates. Because Perk is built on top of Express, it supports all the templating engines and ships with [ejs](http://www.embeddedjs.com/). In this guide we'll cover how to pass data from a route to an ejs template.
 
 ### Passing data from your route
 
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ```
 
-If this looks unfamiliar, you might want to check out the guide on [creating new pages and routes](creating-new-pages-and-routes.html).
+If this looks unfamiliar, you might want to check out the guide on [creating new pages and routes](/v1/guides/creating-new-pages-and-routes.html).
 
 We're going to add a few lines of code to pass an array of blog posts to the blog home page.
 
@@ -116,4 +116,4 @@ will render
 
 ### Next steps...
 
-Learn how to [query and display](/guides/querying-and-displaying-data-with-models.html) data with models.
+Learn how to [query and display](/v1/guides/querying-and-displaying-data-with-models.html) data with models.

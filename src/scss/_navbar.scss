@@ -13,6 +13,12 @@
 		&:hover {
 			color: #fff;
 		}
+
+		@media (min-width: 624px) {
+			&.right-nav {
+				float: right;
+			}
+		}
 	}
 
 	.logo {

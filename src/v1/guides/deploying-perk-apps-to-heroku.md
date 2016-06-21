@@ -44,6 +44,8 @@ On the command line make sure you are in the root directory of the app you want 
 	* This will spin up a free PostgreSQL database to store your data.
 1. `heroku config:set SESSION_SECRET=your_secret_goes_here`
 	* Specifies a secret session code for encrypting your user sessions.
+1. `heroku config:set NODE_ENV=heroku`
+	* Instructs Perk to use heroku config file.
 1. `git push heroku master`
 	* Pushes your code to Heroku and deploy your app.
 	* Runs your production build process for compiling scripts and styles.

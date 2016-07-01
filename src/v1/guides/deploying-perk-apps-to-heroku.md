@@ -52,6 +52,7 @@ On the command line make sure you are in the root directory of the app you want 
 	* Runs any database migrations that you've added.
 1. `heroku open`
 	* Opens the deployed app in your browser.
+	* If you get an error that says `howhap-middleware requires an express session.` just wait a few minutes. Sometimes Heroku takes a while to boot up the redis server.
 
 ### Re-deploying
 

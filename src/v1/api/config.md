@@ -433,6 +433,14 @@ override property:  webserver
 
 Specifies the hostname for your application. This is ued by OAuth authentication to know where users should be redirected after authenticating, among other places in the codebase.
 
+#### reponse.defaultFormat
+
+> type: string
+
+> default: 'json'
+
+Specifies the default response format for your error messages and authentication endpoints. If you are building a single page app and you are using Perk as an API you probably want to leave this as 'json'. If you are building a more traditional multi-page web application you probably want 'html'.
+
 #### http.port
 
 > type: number

@@ -10,7 +10,7 @@ layout: topic.html
 1. [Overview](#overview)
 1. [Defining errors](#defining-errors)
 1. [res.error.add](#res-error-add-error-params-descriptor-default-)
-1. [res.error.send](#res-error-send-redirect-)
+1. [res.error.send](#res-error-send-redirect-reponseformat-)
 1. [res.error.display](#error-display-descriptor-default-defaultvalue-)
 1. [Additional information](#additional-information)
 
@@ -98,13 +98,15 @@ res.error.add(
 
 > Using params to customize error messages
 
-## res.error.send([redirect])
+## res.error.send([redirect][, reponseFormat])
 
 Send the errors as JSON or stores them in the session and redirects to the specified location.
 
 ### Params
 
 * `redirect` (string): If the user should be redirected to another page, this argument specifies which page they should be redirected to before displaying the error.
+
+* `responseFormat` (string): Either 'json' or 'html'. If you would like the user to be redirected to a new page specify 'html'. If you would like the response to return pure json specify 'json'. If you omit this parameter, the responseFormat will fallback to the config setting [webserver.response.defaultFormat](config.html#reponse-defaultformat).
 
 ### Return
 
@@ -122,7 +124,7 @@ res.error.send();
 
 ```js
 res.error.add('auth.INVALID_CREDENTIALS');
-res.error.send('/auth/login');
+res.error.send('/auth/login', 'html');
 ```
 
 > Stores error information in the session and redirects the user to the /auth/login page where it can be displayed.
@@ -146,8 +148,6 @@ if(!res.error.send('/auth/login')) {
 	// dashboard page.
 	res.redirect('/dashboard')
 }
-
-
 ```
 
 > Takes advantage of the return value to determine if errors were sent.

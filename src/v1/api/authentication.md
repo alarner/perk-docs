@@ -48,10 +48,7 @@ The second method of registering uses a built-in RESTful API endpoint. This is p
 
 ```js
 fetch('/auth/register', {
-	method: 'POST', 
-	headers: new Headers({
-		'Content-Type': 'application/json'
-	})
+	method: 'POST'
 }).then(function(response) {
 	// Convert response to JSON
 	return response.json();
@@ -64,7 +61,14 @@ fetch('/auth/register', {
 });
 ```
 
-The server knows to respond back with JSON in this scenario because the *Content-Type* specifies a JSON response.
+The server knows to respond back with JSON based on the config setting [webserver.response.defaultFormat](config.html#reponse-defaultformat). If this setting is set to 'html' and you want to ensure that your request returns JSON you can append `?responseFormat=json` to the end of the request URL:
+
+```js
+fetch('/auth/register?defaultFormat=json', {
+	method: 'POST'
+})
+// ...
+```
 
 ### Logging in with a Password
 
@@ -82,10 +86,7 @@ The second method of logging in uses a built-in RESTful API endpoint. This is pa
 
 ```js
 fetch('/auth/login', {
-	method: 'POST', 
-	headers: new Headers({
-		'Content-Type': 'application/json'
-	})
+	method: 'POST'
 }).then(function(response) {
 	// Convert response to JSON
 	return response.json();
@@ -98,7 +99,14 @@ fetch('/auth/login', {
 });
 ```
 
-The server knows to respond back with JSON in this scenario because the *Content-Type* specifies a JSON response.
+As with registering, the server knows to respond back with JSON based on the config setting [webserver.response.defaultFormat](config.html#reponse-defaultformat). If this setting is set to 'html' and you want to ensure that your request returns JSON you can append `?responseFormat=json` to the end of the request URL.
+
+```js
+fetch('/auth/login?defaultFormat=json', {
+	method: 'POST'
+})
+// ...
+```
 
 ### Password Reset
 
@@ -127,27 +135,29 @@ Logging out is the same for all users, and will destroy their server based sessi
 To log out you can either redirect users to `/auth/logout` or make a GET or POST request to `/auth/logout`. For example:
 
 ```html
-<a href="/auth/logout">Log out</a>
+<a href="/auth/logout?responseFormat=html">Log out</a>
 ```
 
 or
 
 ```js
 fetch('/auth/login', {
-	method: 'POST', 
-	headers: new Headers({
-		'Content-Type': 'application/json'
-	})
+	method: 'POST'
 }).then(function(response) {
-	// Convert response to JSON
-	return response.json();
-}).then(function(response) {
-	// `user` is now logged out
-	console.log('The user is logged out'); 
+	// Do something after the user is logged out
 }).catch(function(err) {
 	// `err` is an error returned from the server
 	console.log('There was a problem', err);
 });
+```
+
+As with logging in and registering, the server knows to respond back with JSON based on the config setting [webserver.response.defaultFormat](config.html#reponse-defaultformat). If this setting is set to 'html' and you want to ensure that your request returns JSON you can append `?responseFormat=json` to the end of the request URL.
+
+```js
+fetch('/auth/logout?defaultFormat=json', {
+	method: 'POST'
+})
+// ...
 ```
 
 ## Accessing the Logged in User
@@ -176,14 +186,24 @@ There is built in middleware that you can use to lock down any of your routes to
 ```js
 let isLoggedIn = require('../lib/middleware/logged-in');
 
-// Add `isLoggedIn` middleware to restrict
-// this page to logged in users.
+// Add `isLoggedIn` middleware to restrict this page to logged in users.
 router.get('/dashboard', isLoggedIn, function(req, res, next) {
 	// Dashboard code goes here
 });
 ```
 
+In the above example the response will be formatted as specified by the webserver.response.defaultFormat in your config directory. If you wish to force the response to be returned in a particular format (html for example) you can modify the example like so:
 
+```js
+let isLoggedIn = require('../lib/middleware/logged-in');
+
+// Add `isLoggedIn` middleware to restrict this page to logged in users.
+router.get('/dashboard', isLoggedIn({ defaultFormat: 'html' }), function(req, res, next) {
+	// Dashboard code goes here
+});
+```
+
+In this case the addition of `({ defaultFormat: 'html' })` will cause the page to redirect back to the login page instead of responding with pure JSON.
 
 ## Configuration
 

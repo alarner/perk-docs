@@ -1,6 +1,8 @@
 @import 'colors';
 
 #email {
+	display: none;
+	
 	#mc_embed_signup {
 		background: $callout;
 		color: #fff;
@@ -29,4 +31,18 @@
 		}
 	}
 	border-bottom: 2px solid darken($callout, 10%);
+
+	.close {
+		color: lighten($callout, 30%);
+		font: 14px/100% arial, sans-serif;
+		position: absolute;
+		right: 5px;
+		text-decoration: none;
+		text-shadow: 0 1px 0 lighten($callout, 5%);
+		top: 5px;
+
+		&:after {
+			content: '✖';
+		}
+	}
 }

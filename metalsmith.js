@@ -13,23 +13,28 @@ module.exports = Metalsmith(__dirname)
 .use(collections({
 	guides: {
 		pattern: 'v1/guides/*.md',
-		sortBy: 'order'
+		sortBy: 'order',
+		metadata: { homepage: true }
 	},
 	api: {
 		pattern: 'v1/api/*.md',
-		sortBy: 'title'
+		sortBy: 'title',
+		metadata: { homepage: true }
 	},
 	'common-errors': {
 		pattern: 'v1/common-errors/*.md',
-		sortBy: 'order'
+		sortBy: 'order',
+		metadata: { homepage: false }
 	},
 	'video-reel': {
 		pattern: 'v1/video-reel/*.md',
-		sortBy: 'order'
+		sortBy: 'order',
+		metadata: { homepage: true }
 	},
 	group: {
 		pattern: 'v1/*/index.md',
-		sortBy: 'order'
+		sortBy: 'order',
+		metadata: { homepage: false }
 	}
 }))
 .use(assets({

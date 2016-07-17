@@ -22,14 +22,16 @@
 				collections
 				.group
 				.forEach(function(group){ %>
-					<% if(group.group && collections[group.group] && collections[group.group].length) { %>
+					<% if(group.group && collections[group.group] && collections[group.group].length && collections[group.group].metadata && collections[group.group].metadata.homepage) { %>
 						<div class="four columns group">
 							<a href="<%= group.path %>" class="title"><%= group.title %></a>
 							<ul>
 								<% 
 									collections[group.group]
 									.filter(function(content) {
-										return (content.path.substr(-11) !== '/index.html');
+										return (
+											content.path.substr(-11) !== '/index.html'
+										);
 									})
 									.slice(0, 4)
 									.forEach(function(content) { %>

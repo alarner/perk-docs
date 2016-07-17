@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="<%= description || '' %>">
+	<link rel="stylesheet" type="text/css" href="/assets/css/global.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/topic.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic,300' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="48x48">
+</head>
+<body>
+	<%- include('../includes/navbar.html') %>
+	<main class="row">
+		<%- include('../includes/topics.html', {
+			topics: collections[group],
+			current: {
+				title: title
+			}
+		}) %>
+		<section class="eight columns">
+			<div class="topic-contents">
+				<h1><%- title %></h1>
+				<p>
+					<%- description %>
+				</p>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= id %>" frameborder="0" allowfullscreen></iframe>
+				<%- contents %>
+
+				<h2>Questions</h2>
+				<div id="disqus_thread"></div>
+				<script>
+					/**
+					 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+					 */
+					/*
+					var disqus_config = function () {
+						this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+						this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+					*/
+					(function() {  // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						
+						s.src = '//perkframework.disqus.com/embed.js';
+						
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			</div>
+		</section>
+	</main>
+	<%- include('../includes/ga.html') %>
+</body>
+</html>

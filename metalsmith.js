@@ -23,6 +23,10 @@ module.exports = Metalsmith(__dirname)
 		pattern: 'v1/common-errors/*.md',
 		sortBy: 'order'
 	},
+	reel: {
+		pattern: 'v1/reel/*.md',
+		sortBy: 'order'
+	},
 	group: {
 		pattern: 'v1/*/index.md',
 		sortBy: 'order'

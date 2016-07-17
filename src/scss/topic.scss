@@ -39,6 +39,10 @@
 .topic-contents {
 	padding: 0 8%;
 	max-width: 550px;
+
+	iframe {
+		max-width: 100%;
+	}
 }
 
 @media ($bp-larger-than-phablet) {

@@ -1,0 +1,32 @@
+@import 'colors';
+
+#email {
+	#mc_embed_signup {
+		background: $callout;
+		color: #fff;
+		width: auto;
+		padding: 0 1rem;
+		form {
+			margin: 0;
+		}
+
+		.email {
+			border: 1px solid $alternate;
+			border-radius: 0;
+			width: 100%;
+			margin: 5px 0;
+
+			@media (min-width: 768px) {
+				margin: 0 0 0 1rem;
+				width: 300px;
+			}
+		}
+
+		.button {
+			background: #fff;
+			color: $paragraph;
+			font-weight: bold;
+		}
+	}
+	border-bottom: 2px solid darken($callout, 10%);
+}

@@ -9,5 +9,7 @@ order: 400
 
 ## Resources
 
-* [Code (GitHub)]()
-* [Video Transcript]()
+* [Postman REST Client Extension](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)
+* [bookshelf-api docs](https://github.com/alarner/bookshelf-api)
+* [Code (GitHub)](https://github.com/alarner/perk-six-degrees/commit/4f54b5fe47f1455f1c97975a9c505a36fd9a7c09)
+* [Video Transcript](https://github.com/alarner/perk-reel/blob/master/six-degrees/04%20-%20Setting%20up%20an%20API/transcript.md)

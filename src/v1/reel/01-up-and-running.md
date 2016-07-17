@@ -9,5 +9,7 @@ order: 100
 
 ## Resources
 
-* [Code (GitHub)]()
-* [Video Transcript]()
+* [Installing Node, Redis and PostgreSQL on your Mac](http://perkframework.com/v1/guides/install-node-redis-and-postgres-on-your-mac.html)
+* [Six Degrees Wireframes](https://github.com/alarner/perk-six-degrees/blob/master/Wireframes.pdf)
+* [Code (GitHub)](https://github.com/alarner/perk-six-degrees/tree/01)
+* [Video Transcript](https://github.com/alarner/perk-reel/blob/master/six-degrees/01%20-%20Up%20and%20Running/transcript.md)

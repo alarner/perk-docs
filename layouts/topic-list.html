@@ -11,12 +11,7 @@
 <body>
 	<%- include('../includes/navbar.html') %>
 	<main class="row">
-		<%- include('../includes/topics.html', {
-			topics: collections[group],
-			current: {
-				title: title
-			}
-		}) %>
+		<%- include('../includes/topics.html') %>
 		<section class="eight columns">
 			<div class="topic-contents">
 				<h1><%- title %></h1>

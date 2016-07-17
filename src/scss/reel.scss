@@ -1,1 +1,28 @@
+@import 'colors';
 @import 'email';
+
+.video-nav {
+	margin-top: 1rem;
+	overflow: hidden;
+
+	a {
+		min-width: 140px;
+		text-align: center;
+	}
+
+	.prev {
+		float: left;
+	}
+
+	.next, .notify {
+		float: right;
+	}
+
+	.notify {
+		background: $callout;
+
+		&:hover {
+			background: darken($callout, 5%);
+		}
+	}
+}

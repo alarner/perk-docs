@@ -13,12 +13,7 @@
 	<%- include('../includes/email.html') %>
 	<%- include('../includes/navbar.html') %>
 	<main class="row">
-		<%- include('../includes/topics.html', {
-			topics: collections[group],
-			current: {
-				title: title
-			}
-		}) %>
+		<%- include('../includes/topics.html') %>
 		<section class="eight columns">
 			<div class="topic-contents">
 				<h1><%- title %></h1>
@@ -26,6 +21,27 @@
 					<%- description %>
 				</p>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= id %>" frameborder="0" allowfullscreen></iframe>
+
+				<%
+					var current = collections['video-reel'].filter(function(page) {
+						return page.id === id;
+					}).pop();
+				%>
+
+				<% if(current) { %>
+					<div class="video-nav">
+						<% if(current.previous) { %>
+							<a href="<%= current.previous.path %>" class="btn prev">Previous Video</a>
+						<% } %>
+
+						<% if(current.next) { %>
+							<a href="<%= current.next.path %>" class="btn cta next">Next Video &rsaquo;</a>
+						<% } else { %>
+							<a href="http://eepurl.com/b980Xv" class="btn cta notify">Notify me when the next video is ready</a>
+						<% } %>
+					</div>
+				<% } %>
+
 				<%- contents %>
 
 				<h2>Questions</h2>

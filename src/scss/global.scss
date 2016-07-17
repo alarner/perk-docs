@@ -78,6 +78,11 @@ p {
 
 a {
 	text-decoration: none;
+	color: lighten($heading, 10%);
+
+	&:hover {
+		color: darken($heading, 10%);
+	}
 }
 
 .list-item {

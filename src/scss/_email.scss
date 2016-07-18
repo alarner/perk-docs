@@ -1,7 +1,40 @@
 @import 'colors';
 
+body {
+	margin-top: 9.2rem;
+	@media(min-width: 771px) {
+		margin-top: 4.6rem;
+	}
+
+	.navbar {
+		top: 0;
+	}
+}
+
+body.email {
+	margin-top: 20.4rem;
+	@media(min-width: 769px) {
+		margin-top: 14.6rem;
+	}
+	@media(min-width: 771px) {
+		margin-top: 10rem;
+	}
+
+	.navbar {
+		top: 11.2rem;
+
+		@media(min-width: 769px) {
+			top: 5.4rem;
+		}
+	}
+}
+
 #email {
 	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	
 	#mc_embed_signup {
 		background: $callout;
@@ -18,7 +51,7 @@
 			width: 100%;
 			margin: 5px 0;
 
-			@media (min-width: 768px) {
+			@media (min-width: 769px) {
 				margin: 0 0 0 1rem;
 				width: 300px;
 			}
@@ -28,6 +61,11 @@
 			background: #fff;
 			color: $paragraph;
 			font-weight: bold;
+			width: 100%;
+
+			@media (min-width: 769px) {
+				width: auto;
+			}
 		}
 	}
 	border-bottom: 2px solid darken($callout, 10%);

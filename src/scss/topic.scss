@@ -2,6 +2,7 @@
 @import 'config';
 
 .topics {
+	border-right: 1px solid $border;
 	.list-item{
 		padding-left: 2em;
 
@@ -26,7 +27,7 @@
 
 		&.active {
 			background-color: $highlight;
-			color: #FFFFFF;
+			font-weight: bold;
 		}
 	}
 

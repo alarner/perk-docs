@@ -53,42 +53,6 @@ u {
 	}
 }
 
-.group {
-	background-color: #E8E8E8;
-	border-radius: $global-radius;
-	padding: 0 0 1em 0;
-	overflow: hidden;
-
-	.title {
-		display: block;
-		color: #efefef;
-		padding: 1em;
-		margin: 0;
-		background-color: $heading;
-		text-transform: uppercase;
-
-		&:hover {
-			background-color: darken($heading, 5%);
-			color: #E6E6E6;
-		}
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	li {
-		&:last-child {
-			a {
-				border-bottom: none;
-				font-weight: bold;
-			}
-		}
-	}
-}
-
 .beliefs {
 	background: #f3f3f3;
 	padding: 6rem 0;

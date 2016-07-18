@@ -16,6 +16,7 @@
 		padding: 0 1em;
 
 		&:hover {
+			background-color: darken($primary, 5%);
 			color: #fff;
 		}
 
@@ -32,6 +33,9 @@
 			max-height: 3.4rem;
 			opacity: 0.7;
 		}
+		&:hover {
+			background-color: transparent;
+		}
 	}
 
 	.active {
@@ -39,6 +43,6 @@
 	}
 }
 
-.container.nav-padding {
-	padding-top: 4.6rem;
+.nav-padding {
+	margin-top: 4.6rem;
 }

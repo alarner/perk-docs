@@ -6,8 +6,8 @@
 				.group
 				.forEach(function(group){ %>
 					<% if(group.group && collections[group.group] && collections[group.group].length && collections[group.group].metadata && collections[group.group].metadata.homepage) { %>
-						<div class="three columns group">
-							<a href="<%= group.path %>" class="title"><%= group.title %></a>
+						<div class="four columns">
+							<a href="<%= group.path %>" class="footer-title"><%= group.title %></a>
 							<ul>
 								<% 
 									collections[group.group]
@@ -18,9 +18,9 @@
 									})
 									.slice(0, 4)
 									.forEach(function(content) { %>
-									<li><a href="<%= content.path %>" class="list-item"><%= content.title %></a></li>
+									<li><a href="<%= content.path %>" class="footer-link"><%= content.title %></a></li>
 								<% }); %>
-								<li><a href="<%= group.path %>" class="list-item">Full List...</a></li>
+								<li><a href="<%= group.path %>" class="footer-link">Full List...</a></li>
 							</ul>
 						</div>
 					<% } %>

@@ -1,0 +1,43 @@
+footer {
+	background: darken($heading, 10%);
+	padding-top: 3rem;
+	border-top: 2px solid darken($heading, 15%);
+
+	a:hover {
+		color: $primary;
+	}
+
+	.columns {
+		padding: 0 0 1em 0;
+		overflow: hidden;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.footer-title {
+	display: block;
+	color: #efefef;
+	padding: 1em 0;
+	margin: 0;
+	font-size: 1.6rem;
+
+	&:hover {
+		color: $primary;
+	}
+}
+
+.footer-link {
+	font-size: 1.3rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	color: #ccc;
+	display: block;
+	line-height: 3rem;
+}

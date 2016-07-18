@@ -1,8 +1,21 @@
 @import 'config';
 
+h1 {
+	font-size: 5rem;
+	font-weight: 100;
+	margin: 12rem 0 0 0;
+}
+
+h2 {
+	font-size: 2.5rem;
+	font-weight: 100;
+	margin: 0 0 8rem 0;
+	color: lighten($heading, 20%);
+}
+
 u {
 	a {
-		color: #5E5E5E;
+		color: lighten($heading, 20%);
 	}
 }
 
@@ -14,7 +27,7 @@ u {
 
 .cta-container {
 	text-align: center;
-	margin: 3rem 0;
+	margin: 2rem 0;
 
 	
 
@@ -40,38 +53,21 @@ u {
 	}
 }
 
-.group {
-	background-color: #E8E8E8;
-	border-radius: $global-radius;
-	padding: 0 0 1em 0;
-	overflow: hidden;
+.beliefs {
+	background: #f3f3f3;
+	padding: 6rem 0;
+	margin-bottom: 6rem;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 
-	.title {
-		display: block;
-		color: #FDFDFD;
-		padding: 1em;
-		margin: 0;
-		background-color: #666666;
-		text-transform: uppercase;
+	.container {
+		background: #fff;
+		padding: 3rem 0 0 0;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+		border-radius: 0.2rem;
 
-		&:hover {
-			background-color: #333;
-			color: #E6E6E6;
-		}
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	li {
-		&:last-child {
-			a {
-				border-bottom: none;
-				font-weight: bold;
-			}
+		.row {
+			padding: 0 3rem;
 		}
 	}
 }

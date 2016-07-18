@@ -2,6 +2,7 @@
 @import 'config';
 
 .topics {
+	border-right: 1px solid $border;
 	.list-item{
 		padding-left: 2em;
 
@@ -26,7 +27,7 @@
 
 		&.active {
 			background-color: $highlight;
-			color: #FFFFFF;
+			font-weight: bold;
 		}
 	}
 
@@ -34,6 +35,14 @@
 		height: 100%;
 		margin-bottom: 0;
 	}
+}
+
+.topic {
+	border-left: 1px solid $border;
+	margin-left: -1px;
+	padding-left: 4%;
+	margin-bottom: 0;
+	padding-bottom: 4%;
 }
 
 .topic-contents {
@@ -51,41 +60,43 @@
 	}
 
 	body {
-		background-image: -webkit-gradient(linear,
-			left top,
-			right top,
-			color-stop(0, $alternate),
-			color-stop(30.66667%, $alternate),
-			color-stop(30.66667%, #fff),
-			color-stop(100%, #fff)
-		);
-		background-image: -webkit-linear-gradient(
-			left,
-			$alternate,
-			$alternate 30.66667%,
-			#fff 30.66667%,
-			#fff 100%
-		);
-		background-image: -moz-linear-gradient(
-			left,
-			$alternate,
-			$alternate 30.66667%,
-			#fff 30.66667%,
-			#fff 100%
-		);
-		background-image: -ms-linear-gradient(
-			left,
-			$alternate,
-			$alternate 30.66667%,
-			#fff 30.66667%,
-			#fff 100%
-		);
-		background-image: -o-linear-gradient(
-			left,
-			$alternate,
-			$alternate 30.66667%,
-			#fff 30.66667%,
-			#fff 100%
-		);
+		// background-image: -webkit-gradient(linear,
+		// 	left top,
+		// 	right top,
+		// 	color-stop(0, $alternate),
+		// 	color-stop(30.66667%, $alternate),
+		// 	color-stop(30.66667%, #fff),
+		// 	color-stop(100%, #fff)
+		// );
+		// background-image: -webkit-linear-gradient(
+		// 	left,
+		// 	#fff,
+		// 	#fff 30.5%,
+		// 	$border 30.5%,
+		// 	$border 30.66667%,
+		// 	#fff 30.66667%,
+		// 	#fff 100%
+		// );
+		// background-image: -moz-linear-gradient(
+		// 	left,
+		// 	$alternate,
+		// 	$alternate 30.66667%,
+		// 	#fff 30.66667%,
+		// 	#fff 100%
+		// );
+		// background-image: -ms-linear-gradient(
+		// 	left,
+		// 	$alternate,
+		// 	$alternate 30.66667%,
+		// 	#fff 30.66667%,
+		// 	#fff 100%
+		// );
+		// background-image: -o-linear-gradient(
+		// 	left,
+		// 	$alternate,
+		// 	$alternate 30.66667%,
+		// 	#fff 30.66667%,
+		// 	#fff 100%
+		// );
 	}
 }

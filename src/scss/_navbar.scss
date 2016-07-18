@@ -2,6 +2,11 @@
 .navbar {
 	background-color: $primary;
 	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
 
 	a {
 		display: block;
@@ -11,6 +16,7 @@
 		padding: 0 1em;
 
 		&:hover {
+			background-color: darken($primary, 5%);
 			color: #fff;
 		}
 
@@ -22,18 +28,21 @@
 	}
 
 	.logo {
-		color: darken($primary, 20%);
-		font-weight: bold;
-		font-size: 1.5em;
-		padding: 0 1em;
-		line-height: 2.08333em;
-
+		img {
+			margin-top: 0.8rem;
+			max-height: 3.2rem;
+			opacity: 0.7;
+		}
 		&:hover {
-			color: darken($primary, 30%);
+			background-color: transparent;
 		}
 	}
 
 	.active {
 		background-color: darken($primary, 10%);
 	}
+}
+
+.nav-padding {
+	// margin-top: 4.6rem;
 }

@@ -6,13 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/global.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/topic.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic,300' rel='stylesheet' type='text/css'>
-	<link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="48x48">
+	<link rel="icon" type="image/png" href="/assets/images/favicon.png?v=4" sizes="48x48">
 </head>
 <body>
 	<%- include('../includes/navbar.html') %>
-	<main class="row">
+	<main class="row nav-padding">
 		<%- include('../includes/topics.html') %>
-		<section class="eight columns">
+		<section class="eight columns topic">
 			<div class="topic-contents">
 				<h1><%- title %></h1>
 				<%- contents %>
@@ -28,6 +28,7 @@
 			</div>
 		</section>
 	</main>
+	<script type="text/javascript" src="/assets/scripts/link-fix.js"></script>
 	<%- include('../includes/ga.html') %>
 </body>
 </html>

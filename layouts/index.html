@@ -1,49 +1,79 @@
 <html>
 <head>
-	<title><%= title %></title>
+	<title><%= title %>: a Node.js Web Framework</title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="<%= description %>">
 	<link rel="stylesheet" type="text/css" href="/assets/css/global.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/home.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic,300' rel='stylesheet' type='text/css'>
-	<link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="48x48">
+	<link rel="icon" type="image/png" href="/assets/images/favicon.png?v=4" sizes="48x48">
 </head>
 <body>
 	<%- include('../includes/navbar.html') %>
-	<div class="container">
-		<h1><%= title %></h1>
+	<div class="container nav-padding">
 		<section class="row">
 			<div class="twelve columns">
 				<%- contents %>
+				<div class="cta-container">
+					<a href="/v1/guides/getting-started-os-x.html" class="btn cta lg">
+						<div class="small">Read the</div>
+						<div class="large">Getting Started Guide</div>
+					</a>
+					<a href="https://github.com/alarner/perk" class="btn lg">
+						<div class="small">View the</div>
+						<div class="large">Code on GitHub</div>
+					</a>
+				</div>
 			</div>
 		</section>
-		<section class="row">
-			<%
-				collections
-				.group
-				.forEach(function(group){ %>
-					<% if(group.group && collections[group.group] && collections[group.group].length && collections[group.group].metadata && collections[group.group].metadata.homepage) { %>
-						<div class="four columns group">
-							<a href="<%= group.path %>" class="title"><%= group.title %></a>
-							<ul>
-								<% 
-									collections[group.group]
-									.filter(function(content) {
-										return (
-											content.path.substr(-11) !== '/index.html'
-										);
-									})
-									.slice(0, 4)
-									.forEach(function(content) { %>
-									<li><a href="<%= content.path %>" class="list-item"><%= content.title %></a></li>
-								<% }); %>
-								<li><a href="<%= group.path %>" class="list-item">Full List...</a></li>
-							</ul>
-						</div>
-					<% } %>
-				<% }); %>
-		</main>
 	</div>
+	<div class="beliefs">
+		<div class="container">
+			<section class="row">
+				<div class="six columns">
+					<h3>Good tools have good docs. Period.</h3>
+					<p>We believe that developer tools are only as good as their worst piece of documentation. Perk aims to always have complete, up to date and friendly documentation, so you're never stuck up the creek without a paddle.</p>
+				</div>
+				<div class="six columns">
+					<h3>Committed to <em>not</em> making your life harder.</h3>
+					<p>Lots of dev tools claim to make your life easier. The Perk rule of thumb is that it should never be harder to do something using Perk than to roll it on your own. Perk strikes a balance between providing a handful of useful pre-built features out of the box, but not forcing them down your throat.</p>
+				</div>
+			</section>
+			<section class="row">
+				<div class="six columns">
+					<h3>Stability over features.</h3>
+					<p>Perk is built on stable, tried and true libraries including Passport, Express, Redis and Knex. It may never have the flavor of the month JavaScript features, but we promise that you won't have to re-learn it every 30 days either.</p>
+				</div>
+				<div class="six columns">
+					<h3>Programming should be fun and relaxing.</h3>
+					<p>We believe that programming should be fun, relaxing and exciting, not stressful or tedious. Perks goal is to help you get past the tedious stuff, so that you can spend more time on the unique and interesting challenges of your specific project.</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="container">
+		<section class="row">
+			<div class="twelve columns">
+				<h2>Think Perk is worth a look?</h2>
+				<div class="cta-container">
+					<a href="/v1/guides/getting-started-os-x.html" class="btn lg">
+						<div class="small">Read the</div>
+						<div class="large">Getting Started Guide</div>
+					</a>
+					<a href="https://github.com/alarner/perk" class="btn lg">
+						<div class="small">View the</div>
+						<div class="large">Code on GitHub</div>
+					</a>
+					<a href="/v1/video-reel/01-up-and-running.html" class="btn lg">
+						<div class="small">Watch a</div>
+						<div class="large">Perk Reel Video</div>
+					</a>
+				</div>
+			</div>
+		</section>
+	</div>
+	<%- include('../includes/footer.html') %>
+	<script type="text/javascript" src="/assets/scripts/link-fix.js"></script>
 	<%- include('../includes/ga.html') %>
 </body>
 </html>

@@ -5,4 +5,4 @@ description: Perk is an exceptionally well documented set of tools for building 
 ---
 
 # Optimized for developer happiness.
-## A node framework built on three core tennants: documentation, stability and balance.
+## A node framework built on three core tenets: documentation, stability and balance.

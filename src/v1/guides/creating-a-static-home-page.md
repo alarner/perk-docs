@@ -8,7 +8,7 @@ order: 100
 
 When you first create a Perk project you will be set up with a few basic pages, one of which is the basic Express home page. This guide will walk you through modifying that file.
 
-![Basic Express Homepage](/assets/images/guides/creating-a-static-home-page/basic-express.png)
+![Basic Perk Homepage](/assets/images/guides/creating-a-static-home-page/basic-perk.png)
 
 HTML files in Express (and by association Perk) are stored in the `/views` directory. When a page is requested by the client the flow looks like:
 

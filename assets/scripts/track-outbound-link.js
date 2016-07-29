@@ -22,9 +22,11 @@ var trackOutboundLink = function(url) {
 var links = document.querySelectorAll('a');
 for(var i=0; i<links.length; i++) {
 	if(links[i].hostname !== window.location.hostname) {
-		links[i].addEventListener('click', function(e) {
-			e.preventDefault();
-			trackOutboundLink(e.target.href);
-		});
+		(function(href) {
+			links[i].addEventListener('click', function(e) {
+				e.preventDefault();
+				trackOutboundLink(href);
+			});
+		})(links[i].href);
 	}
 }

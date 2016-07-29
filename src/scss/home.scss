@@ -13,6 +13,11 @@ h2 {
 	color: lighten($heading, 20%);
 }
 
+h4 {
+	font-weight: 100;
+	font-size: 2rem;
+}
+
 u {
 	a {
 		color: lighten($heading, 20%);
@@ -69,5 +74,44 @@ u {
 		.row {
 			padding: 0 3rem;
 		}
+	}
+}
+
+.benefits {
+
+	h4 {
+		padding-left: 3rem;
+		position: relative;
+		&:before {
+			content: '';
+			height: 1.4rem;
+			width: 1.4rem;
+			background: $primary;
+			display: block;
+			position: absolute;
+			transform: rotate(45deg);
+			top: 0.85rem;
+			left: 0;
+			border-radius: 3px;
+			-webkit-box-shadow: 1px -1px 0px 1px darken($primary, 25%);
+			-moz-box-shadow: 1px -1px 0px 1px darken($primary, 25%);
+			box-shadow: 1px -1px 0px 1px darken($primary, 25%);
+		}
+	}
+
+	p {
+		padding-left: 3rem;
+		font-size: 1.4rem;
+		font-style: italic;
+		color: lighten($paragraph, 20%);
+		font-weight: 100;
+	}
+}
+
+.bottom-cta {
+	h2 {
+		padding-top: 2rem;
+		margin-top: 2rem;
+		border-top: 1px solid $border;
 	}
 }

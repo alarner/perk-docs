@@ -61,7 +61,7 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ```
 
-Noticed we've created an array of posts and assigned it to the variable `blogPosts`. Additionally, we are now passing a second argument to our `res.render` method. The second argument is an object that stores all of the information we wish to pass to the view. You can imagine that instead of being hard-coded in our route, the array of posts could have been fetched from our database.
+Notice we've created an array of posts and assigned it to the variable `blogPosts`. Additionally, we are now passing a second argument to our `res.render` method. The second argument is an object that stores all of the information we wish to pass to the view. You can imagine that instead of being hard-coded in our route, the array of posts could have been fetched from our database.
 
 ### Rendering data in your view
 

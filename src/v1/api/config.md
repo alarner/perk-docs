@@ -144,7 +144,7 @@ The url where the user should be redirected after successfully registering.
 
 The url where the user should be redirected after successfully logging in.
 
-#### [google|facebook].clientID
+#### [google|facebook|github].clientID
 
 > type: string
 
@@ -152,7 +152,7 @@ The url where the user should be redirected after successfully logging in.
 
 The client identifier string given by the authentication provider (Google or Facebook)
 
-#### [google|facebook].clientSecret
+#### [google|facebook|github].clientSecret
 
 > type: string
 
@@ -176,7 +176,7 @@ The consumer key string given by the trello.
 
 The consumer secret string given by trello.
 
-#### [trello|google|facebook].scope
+#### [trello|google|facebook|github].scope
 
 > type: array of strings
 
@@ -195,7 +195,7 @@ Below you can find documentation on available scopes for each provider:
 * trello
 	* [https://developers.trello.com/authorize](https://developers.trello.com/authorize)
 
-#### [trello|google|facebook].requireEmail
+#### [trello|google|facebook|github].requireEmail
 
 > type: boolean
 
@@ -203,7 +203,7 @@ Below you can find documentation on available scopes for each provider:
 
 A boolean value representing whether or not the user should be required to provide an email. If the authentication provider refuses to provide the email automatically after a user is authorized, that user will be prompted to enter their email address manually. The view associated with this action is in `/views/auth/email`.
 
-#### [trello|google|facebook].redirect
+#### [trello|google|facebook|github].redirect
 
 > type: string
 
@@ -488,4 +488,3 @@ The path to the SSL certificate key file. If you are running nginx in front of y
 > default: undefined
 
 The path to the SSL certificate file. If you are running nginx in front of your web application then this should be handled by nginx instead. Perk ships with an insecure certificate that you can use for development, but should not be used for production.
-

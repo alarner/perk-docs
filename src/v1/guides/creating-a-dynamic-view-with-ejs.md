@@ -75,7 +75,7 @@ Now we need to actually use that data and display it within our view. Inside of 
 </head>
 <body>
 	<h1>Recent Blog Posts</h1>
-	<% for(var i = 0; i < posts.length; i++) { %>
+	<% for(let i = 0; i < posts.length; i++) { %>
 		<article>
 			<h2><%= posts[i].title %></h1>
 			<p><%= posts[i].body %></p>
@@ -91,7 +91,7 @@ We are using special *ejs* tags above to inject the dymanic content. *ejs* templ
 `<% ... %>` - anything inside of this tag will be evaluated as JavaScript code.
 
 ```js
-<% var message = 'ejs is <strong>cool</strong>'; %>
+<% let message = 'ejs is <strong>cool</strong>'; %>
 ```
 <hr>
 `<%= ... %>` - anything inside of this tag will be evaluated as JavaScript code and escaped before being inserted into the page.

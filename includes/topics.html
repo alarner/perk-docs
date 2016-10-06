@@ -4,6 +4,6 @@
 		var topics = collections[group];
 	%>
 	<% topics.forEach(function(topic) { %>
-		<a href="<%= topic.path %>" class="list-item<%= topic.path === path ? ' active' : '' %>"><%= topic.title %></a>
+		<a href="<%= topic.path %>" class="list-item<%= topic.path === path ? ' active' : '' %>"><%= topic.shortTitle == null? topic.title : topic.shortTitle %></a>
 	<% }); %>
 </nav>

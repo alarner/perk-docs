@@ -1,6 +1,6 @@
 ---
 title: Installing Node, Redis and PostgreSQL on your Mac
-shortTitle: Node, Redis and PostgreSQL
+shortTitle: Install Node, Redis, PostgreSQL
 description: A quick guide describing how to install Node, Redis and PostgreSQL on OS X.
 date: 2016-03-18
 layout: topic.html

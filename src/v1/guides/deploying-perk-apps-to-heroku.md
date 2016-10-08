@@ -8,6 +8,11 @@ order: 400
 
 [Heroku](https://www.heroku.com) is a cloud platform that lets you build, deliver, monitor and scale apps. Perk integrates easily with Heroku so that you can deploy your apps quickly without worrying about managing your own servers (although you can do that too if you want to).
 
+## Deploy Automatically
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alarner/perk)
+
+## Deploy Manually
+
 > Note: this guide assumes that you have git installed.
 
 ### Register for a Heroku account

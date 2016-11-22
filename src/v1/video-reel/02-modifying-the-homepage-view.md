@@ -10,8 +10,8 @@ order: 200
 ## Resources
 
 * [npmjs.com](https://www.npmjs.com/)
-* [Code (GitHub)](/v1/api/views.html#changing-templating-engines)
+* [Changing Templating Engines](/v1/api/views.html#changing-templating-engines)
 * [Configuration Docs](/v1/api/config.html)
 * [Code (GitHub)](https://github.com/alarner/perk-six-degrees/commit/25b5dde72ac335c9c4a7454d66d30ea18a8043fd)
-* [Video Transcript]()
+* [Video Transcript](https://github.com/alarner/perk-reel/blob/master/six-degrees/02%20-%20Modify%20the%20Homepage%20View/transcript.md)
 

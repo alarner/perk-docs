@@ -45,8 +45,8 @@ module.exports = Metalsmith(__dirname)
 	tables: true,
 	langPrefix: 'language-'
 }))
-.use(prism())
 .use(path())
+.use(prism())
 .use(layouts({
 	engine: 'ejs',
 	partials: 'partials'

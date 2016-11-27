@@ -6,6 +6,7 @@ var sass = require('metalsmith-sass');
 var collections = require('metalsmith-collections');
 var filenames = require('metalsmith-filenames');
 var prism = require('metalsmith-prism');
+var dateFormatter = require('metalsmith-date-formatter');
 var path = require('./plugins/path');
 
 module.exports = Metalsmith(__dirname)
@@ -31,6 +32,11 @@ module.exports = Metalsmith(__dirname)
 		sortBy: 'order',
 		metadata: { homepage: true }
 	},
+	'blog': {
+		pattern: 'v1/blog/*.md',
+		sortBy: 'date',
+		metadata: { homepage: true }
+	},
 	group: {
 		pattern: 'v1/*/index.md',
 		sortBy: 'order',
@@ -47,6 +53,7 @@ module.exports = Metalsmith(__dirname)
 }))
 .use(path())
 .use(prism())
+.use(dateFormatter())
 .use(layouts({
 	engine: 'ejs',
 	partials: 'partials'

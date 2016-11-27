@@ -1,0 +1,13 @@
+@import 'colors';
+
+.best {
+    background-color: $primary
+}
+
+table {
+    margin-bottom: 4rem;
+}
+
+.author-date {
+    color: lighten($paragraph, 30%);
+}

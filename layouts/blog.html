@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="<%= description || '' %>">
+    <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/topic.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/blog.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic,300' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png?v=4" sizes="48x48">
+</head>
+<body>
+    <%- include('../includes/navbar.html') %>
+    <main class="row nav-padding">
+        <section class="eight columns offset-by-two">
+            <h1><%- title %></h1>
+            <p class="author-date">by <%= author %> on <%= date %></p>
+            <%- contents %>
+        </section>
+    </main>
+    <script type="text/javascript" src="/assets/scripts/link-fix.js"></script>
+    <script type="text/javascript" src="/assets/scripts/track-outbound-link.js"></script>
+    <%- include('../includes/ga.html') %>
+</body>
+</html>

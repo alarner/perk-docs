@@ -1,6 +1,6 @@
 ---
 title: "Webpack vs. Browserify: The Ultimate Showdown"
-description: "When using perk you have the option of either Webpack or Browserify. This in itself isn't that different from other frameworks, but my reasoning for including both might be. For other technology decisions I picked what I thought was the best tool for the job. I chose knex over sequelize. I chose Sass over Less or Stylus. For the module loader, specifically, I thought it was important to use both.."
+description: "When using perk you have the option of either Webpack or Browserify. This in itself isn't that different from other frameworks, but my reasoning for including both might be. For other technology decisions I picked what I thought was the best tool for the job. I chose knex over sequelize. I chose Sass over Less or Stylus. For the module loader, specifically, I thought it was important to use both."
 date: 2016-11-27
 layout: blog.html
 author: "Aaron Larner"

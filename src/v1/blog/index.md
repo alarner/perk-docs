@@ -5,5 +5,3 @@ layout: topic-list.html
 group: blog
 order: 005
 ---
-
-Blog

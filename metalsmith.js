@@ -15,32 +15,32 @@ module.exports = Metalsmith(__dirname)
 	guides: {
 		pattern: 'v1/guides/*.md',
 		sortBy: 'order',
-		metadata: { homepage: true }
+		metadata: { footer: true }
 	},
 	api: {
 		pattern: 'v1/api/*.md',
 		sortBy: 'title',
-		metadata: { homepage: true }
+		metadata: { footer: true }
 	},
 	'common-errors': {
 		pattern: 'v1/common-errors/*.md',
 		sortBy: 'order',
-		metadata: { homepage: false }
+		metadata: { footer: false }
 	},
 	'video-reel': {
 		pattern: 'v1/video-reel/*.md',
 		sortBy: 'order',
-		metadata: { homepage: true }
+		metadata: { footer: true }
 	},
 	'blog': {
 		pattern: 'v1/blog/*.md',
 		sortBy: 'date',
-		metadata: { homepage: true }
+		metadata: { footer: false }
 	},
 	group: {
 		pattern: 'v1/*/index.md',
 		sortBy: 'order',
-		metadata: { homepage: false }
+		metadata: { footer: false }
 	}
 }))
 .use(assets({

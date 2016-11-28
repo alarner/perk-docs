@@ -5,7 +5,7 @@
 				collections
 				.group
 				.forEach(function(group){ %>
-					<% if(group.group && collections[group.group] && collections[group.group].length && collections[group.group].metadata && collections[group.group].metadata.homepage) { %>
+					<% if(group.group && collections[group.group] && collections[group.group].length && collections[group.group].metadata && collections[group.group].metadata.footer) { %>
 						<div class="four columns">
 							<a href="<%= group.path %>" class="footer-title"><%= group.title %></a>
 							<ul>

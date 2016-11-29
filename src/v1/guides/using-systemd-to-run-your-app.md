@@ -29,12 +29,12 @@ WantedBy=multi-user.target
 
 ### Starting your app with systemd
 
-Once you've created the systemd script you can now use the `service` command to start, stop or restart your app. In these examples `yourapp` will be the name of the .service file that you created.
+Once you've created the systemd script you can now use the `systemctl` command to start, stop or restart your app.
 
-`service yourapp start`
+`systemctl start yourapp.service`
 
-`service yourapp stop`
+`systemctl stop yourapp.service`
 
-`service yourapp restart`
+`systemctl restart yourapp.service`
 
 Once you've run the start command your app will continue to re-boot if the process dies until you run the stop command.

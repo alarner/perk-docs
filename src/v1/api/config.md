@@ -120,7 +120,71 @@ file:               /config/auth.js
 override property:  auth
 ```
 
-#### local.saltRounds
+#### columns.user.email
+
+> type: string
+
+> default: 'email'
+
+The name of the column in the users table that stores the users email address. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) guide.
+
+#### columns.user.firstName
+
+> type: string
+
+> default: 'firstName'
+
+The name of the column in the users table that stores the users first name. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) guide.
+
+#### columns.user.lastName
+
+> type: string
+
+> default: 'lastName'
+
+The name of the column in the users table that stores the users last name. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) 
+
+#### columns.authentication.type
+
+> type: string
+
+> default: 'type'
+
+The name of the column in the authentication table that stores the authentication type. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) 
+
+#### columns.authentication.identifier
+
+> type: string
+
+> default: 'identifier'
+
+The name of the column in the authentication table that stores the authentication identifier (often email). When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) 
+
+#### columns.authentication.password
+
+> type: string
+
+> default: 'password'
+
+The name of the column in the authentication table that stores the authentication password. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) 
+
+#### columns.authentication.data
+
+> type: string
+
+> default: 'data'
+
+The name of the column in the authentication table that stores any extra associated authentication data. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) 
+
+#### columns.authentication.userId
+
+> type: string
+
+> default: 'userId'
+
+The name of the column in the authentication table that stores the associated users id. When you change this you must also change the associated migration. For more information read the [customizing the user database schema](/v1/guides/customizing-the-user-database-schema.html) 
+
+#### adapters.local.saltRounds
 
 > type: integer
 
@@ -128,7 +192,7 @@ override property:  auth
 
 The number of rounds used to encrypt a given hashed password.
 
-#### local.registerRedirect [string, default: '/dashboard']
+#### adapters.local.registerRedirect [string, default: '/dashboard']
 
 > type: string
 
@@ -136,7 +200,7 @@ The number of rounds used to encrypt a given hashed password.
 
 The url where the user should be redirected after successfully registering.
 
-#### local.loginRedirect
+#### adapters.local.loginRedirect
 
 > type: string
 
@@ -144,7 +208,7 @@ The url where the user should be redirected after successfully registering.
 
 The url where the user should be redirected after successfully logging in.
 
-#### [google|facebook|github].clientID
+#### adapters.[google|facebook|github].clientID
 
 > type: string
 
@@ -152,7 +216,7 @@ The url where the user should be redirected after successfully logging in.
 
 The client identifier string given by the authentication provider (Google or Facebook)
 
-#### [google|facebook|github].clientSecret
+#### adapters.[google|facebook|github].clientSecret
 
 > type: string
 
@@ -160,7 +224,7 @@ The client identifier string given by the authentication provider (Google or Fac
 
 The client secret string given by the authentication provider (Google or Facebook)
 
-#### trello.consumerKey
+#### adapters.trello.consumerKey
 
 > type: string
 
@@ -168,7 +232,7 @@ The client secret string given by the authentication provider (Google or Faceboo
 
 The consumer key string given by the trello.
 
-#### trello.consumerSecret
+#### adapters.trello.consumerSecret
 
 > type: string
 
@@ -176,7 +240,7 @@ The consumer key string given by the trello.
 
 The consumer secret string given by trello.
 
-#### [trello|google|facebook|github].scope
+#### adapters.[trello|google|facebook|github].scope
 
 > type: array of strings
 
@@ -195,7 +259,7 @@ Below you can find documentation on available scopes for each provider:
 * trello
 	* [https://developers.trello.com/authorize](https://developers.trello.com/authorize)
 
-#### [trello|google|facebook|github].requireEmail
+#### adapters.[trello|google|facebook|github].requireEmail
 
 > type: boolean
 
@@ -203,7 +267,7 @@ Below you can find documentation on available scopes for each provider:
 
 A boolean value representing whether or not the user should be required to provide an email. If the authentication provider refuses to provide the email automatically after a user is authorized, that user will be prompted to enter their email address manually. The view associated with this action is in `/views/auth/email`.
 
-#### [trello|google|facebook|github].redirect
+#### adapters.[trello|google|facebook|github].redirect
 
 > type: string
 

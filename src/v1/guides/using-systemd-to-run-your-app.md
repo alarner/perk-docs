@@ -3,7 +3,7 @@ title: Using systemd to Run Your App
 description: systemd allows you to ensure that your node server is always running
 date: 2016-11-26
 layout: topic.html
-order: 500
+order: 600
 ---
 
 Ensuring the your node app is always running is important. In the old days of node we used to use node modules like `forever` to do this, but now we have better options. systemd is an init system that's built into many different linux distributions. This guide will show you how to use systemd to restart your app if the process dies for some reason.

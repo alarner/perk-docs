@@ -111,7 +111,34 @@ module.exports = bookshelf.model('Authentication', {
 
 ```
 
-### Step 4: Run the migration
+### Step 4: Modify `views/auth/register.html` to send correct properties.
+
+```html
+...
+<form action="/auth/register?responseFormat=html" method="post">
+	<div>
+		<%- error.display('first_name') %>
+		<input type="text" placeholder="first name" name="first_name" value="<%= prev.display('body', 'first_name') %>">
+	</div>
+	<div>
+		<%- error.display('lastName') %>
+		<input type="text" placeholder="last name" name="last_name" value="<%= prev.display('body', 'last_name') %>">
+	</div>
+	<div>
+		<%- error.display('email') %>
+		<input type="email" placeholder="email" name="email" value="<%= prev.display('body', 'email') %>">
+	</div>
+	<div>
+		<%- error.display('password') %>
+		<input type="password" placeholder="password" name="password">
+	</div>
+	<button>Register</button>
+</form>
+...
+```
+
+
+### Step 5: Run the migration
 
 ```
 knex migrate:latest

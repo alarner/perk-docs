@@ -8,7 +8,7 @@ order: 300
 
 Building your own Facebook login with Perk is super easy. It's a four step process:
 
-1. Get the necessary API keys from Facebook (or whichever other supported third pary service you want).
+1. Get the necessary API keys from Facebook (or whichever other supported third party service you want).
 1. Update your `config/auth.js` file or `config/local.js` file.
 1. Create a login button.
 1. Deploy to Production
@@ -18,7 +18,7 @@ Building your own Facebook login with Perk is super easy. It's a four step proce
 1. Log in to [Facebook](https://facebook.com).
 2. Go to the [Facebook for Developers](https://developers.facebook.com/).
 3. Click _Add a New App._
-	
+
 	![Add a New App](/assets/images/guides/user-auth-with-facebook/add-a-new-app.jpg)
 
 4. Click on the small link that says "Basic Setup."
@@ -30,7 +30,7 @@ Building your own Facebook login with Perk is super easy. It's a four step proce
 	![Create App ID](/assets/images/guides/user-auth-with-facebook/create-app-id.jpg)
 
 6. Click on the _Settings_ link on the left and then fill in your app domain (probably localhost for your dev environment) and site url. Click _Save Changes_.
-	
+
 	![Save](/assets/images/guides/user-auth-with-facebook/save.jpg)
 
 7. Stay on this page, we are going to use the _App Id_ and _App Secret._

@@ -39,6 +39,13 @@ In your terminal type the following commands:
 
 1. Once the containers are running, visit http://localhost:3000.
 
+1. Default Postgres Credentials:
+	- user: perk
+	- password: secret
+	- database: myapp
+
+> the default credentials can be modified in the `develop` file.
+
 ### Managing your containterized app
 
 You will notice that Perk comes with a `develop` helper script. This script makes it simple to pass `knex` or `npm` commands to your node container. The commands just need to be prefaced with `./docker`.

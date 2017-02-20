@@ -40,9 +40,15 @@ In your terminal type the following commands:
 1. Once the containers are running, visit http://localhost:3000.
 
 1. Default Postgres Credentials:
+	- host: localhost
 	- user: perk
 	- password: secret
 	- database: myapp
+	- port: 5432
+
+1. Default Redis Credentials:
+	- host: localhost
+	- port: 6379
 
 > the default credentials can be modified in the `develop` file.
 

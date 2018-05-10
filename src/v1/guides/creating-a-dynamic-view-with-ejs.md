@@ -107,7 +107,7 @@ will render
 `<%- ... %>` - anything inside of this tag will be evaluated as JavaScript code and inserted into the page without being escaped.
 
 ```html
-<span><%= message %></span>
+<span><%- message %></span>
 ```
 will render
 ```html
